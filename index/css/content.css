@@ -1,0 +1,85 @@
+.content {
+    height: 1000px;
+}
+
+
+.product_list {
+    margin-top: 50px;
+}
+
+
+.product_list_title {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px #ccc solid;
+}
+
+.product_list_title>span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 50px;
+
+}
+
+.product_list>.list {
+    width: 85%;
+    margin: 40px auto 0 auto;
+}
+
+.product_list>.list>ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product_list>.list>ul>li {
+    margin: 20px 0px;
+    width: 24%;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.product_list>.list>ul>li:hover {
+    border: 1px solid #ccc;
+}
+
+.product_list>.list>ul>li>img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.product_title {
+    margin: 15px auto 30px auto;
+    font-size: 14px;
+}
+
+.product_price {
+    float: right;
+}
+
+.chucnang>a {
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #000;
+    padding: 6px 15px;
+}
+
+.chucnang {
+    margin-top: 30px;
+    visibility: hidden;
+}
+
+.xemthem {
+    float: right;
+}
+
+.themvao {
+    float: left;
+}
+
+.product_list>.list>ul>li:hover .chucnang {
+    visibility: visible;
+}
