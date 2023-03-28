@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Bop-bin', sans-serif;
+}
+@font-face {
+    font-family: 'Bop-bin';
+    src:
+    url("../../font/Poppins-Light.ttf"),
+    url("../../font/Poppins-LightItalic.ttf"),
+    url("../../font/Poppins-Bold.ttf"),
+    url("../../font/Poppins-BoldItalic.ttf"),
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+header a img{
+    width: 200px;
+    height: 60px;
+}
+
+header .search{
+    margin: 0 85px;
+    display: flex;
+}
+
+header input{
+    height: 40px;
+    width: 350px;
+    border: 0.5px solid #ccc;
+    border-radius: 8px 0px 0px 8px;
+    padding-left: 16px;
+}
+
+header button{
+    height: 40px;
+    width: 40px;
+    background-color: black ;
+    color: white;
+    border-radius: 0px 8px 8px 0px;
+    transition: 0.3s;
+    border: none;
+}
+
+header button:hover{
+    background-color: #27678f;
+}
+
+.account{
+    display: flex;
+    margin-right: 16px  ;
+    color: #000;
+    transition: 0.3s;
+}
+
+.account:hover{
+    color: #27678f;
+}
+
+.account i{
+    margin-right: 6px;
+}
+
+.cart{
+    display: flex;
+    color: #000;
+    transition: 0.3s;
+}
+
+.cart:hover{
+    color: #27678f;
+}
+
+.cart i{
+    margin-right: 6px;
+}

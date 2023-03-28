@@ -1,0 +1,63 @@
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li a i{
+    transition: 0.3s;
+}
+
+nav > ul li a{
+    display: block;
+    padding: 0 20px;
+    line-height: 40px;
+    color: #303036;
+    
+}
+nav ul li:first-child {
+    border-left: none; /* bỏ đường kè trái của phần tử đầu tiên */
+}
+
+/* Khi hover đến li, tô màu cho thẻ a */
+nav ul li:hover>a{
+    color: #27678f;
+}
+
+ul li:hover i{
+    transform: rotate(180deg);
+}
+/*menu con*/
+/*Ẩn các menu con cấp 1,2,3*/
+nav li ul{
+    display: none;
+    min-width: 150px;
+    position: absolute;
+    box-shadow: 0px 5px 20px #ccc;
+    justify-content: flex-end;
+}
+
+nav li>ul li{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    text-align: left;
+}
+
+/*khi hover thì hiện menu con*/
+nav  li:hover > ul{
+    display:  flex;
+    flex-direction: column;
+}
+
+
+
+/*Hiển thị menu con cấp 2,3,4 bên cạnh phải*/
+nav > ul li > ul li >ul{
+    margin-left: 152px;
+    margin-top: -40px;
+}
