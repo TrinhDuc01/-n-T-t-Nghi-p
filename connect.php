@@ -2,7 +2,7 @@
 $username = "root"; // Khai báo username
 $password = "";      // Khai báo password
 $server   = "localhost";   // Khai báo server
-$dbname   = "donoithat";      // Khai báo database
+$dbname   = "noithatbinhminh";      // Khai báo database
 
 // Kết nối database tintuc
 $connect = new mysqli($server, $username, $password, $dbname);

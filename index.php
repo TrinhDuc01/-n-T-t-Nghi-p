@@ -1,7 +1,6 @@
 <?php
 session_start();
 require "connect.php";
-$phong = mysqli_query($connect, "SELECT*FROM room");
 ?>
 
 <!DOCTYPE html>

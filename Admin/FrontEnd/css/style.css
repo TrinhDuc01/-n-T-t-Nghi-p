@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Bop-bin', sans-serif;
+}
+@font-face {
+    font-family: 'Bop-bin';
+    src:
+    url("../../font/Poppins-Light.ttf"),
+    url("../../font/Poppins-LightItalic.ttf"),
+    url("../../font/Poppins-Bold.ttf"),
+    url("../../font/Poppins-BoldItalic.ttf"),
+}
+
+a{
+    text-decoration: none;
+}

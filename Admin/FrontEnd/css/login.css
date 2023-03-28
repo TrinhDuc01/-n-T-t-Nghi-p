@@ -1,0 +1,41 @@
+img {
+    max-width: 35%;
+    height: auto;
+    margin-right: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form-login form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin-bottom: 20px;
+    width: 400px;
+    height: 40px;
+    padding: 5px 10px;
+    text-transform: bold;
+    border: 0.5px solid #ccc;
+}
+
+button{
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    border: none;
+    background-color: #679ee6;
+    border-radius: 5px;
+    color: white;
+}
+
+button:hover{
+    background-color: #1070ee;
+}
+
