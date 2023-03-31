@@ -1,0 +1,37 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li {
+    padding: 16px 20px;
+    transition: 0.3s;
+}
+
+.nav-item a{
+    color: white;
+}
+
+.nav-item:hover{
+    background-color: #565555;
+}
+
+.logout form input{
+    border: none;
+    background-color: #ff1111;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.logout form input:hover{
+    background-color: #ff5a5a;
+}

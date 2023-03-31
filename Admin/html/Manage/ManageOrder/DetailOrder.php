@@ -1,13 +1,13 @@
 <?php
 session_start();
-require "../../../connect.php";
-if (isset($_SESSION['loged'])) {
+require "../../../../connect.php";
+if (isset($_SESSION['admin_login'])) {
 
 } else {
     header("location:../../LoginAdmin.php");
 }
 if (isset($_POST['logout'])) {
-    unset($_SESSION['loged']);
+    unset($_SESSION['admin_login']);
     header("location:../../LoginAdmin.php");
 }
 //lay don hang theo id
@@ -36,46 +36,40 @@ if (isset($_GET['order_id'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
-                            sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
-                            danh mục</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
-                            phòng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
-                            vật liệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý
-                            khách
-                            hàng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn
-                            hàng</a>
-                    </li>
-                </ul>
-                <form class="d-flex" method="post">
-                    <input class="btn btn-danger" type="submit" name="logout" value="Log Out">
-                </form>
-            </div>
-        </div>
-    </nav>
+<nav>
+    <div class="navbar">
+      <ul style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
+            sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
+            danh mục</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
+            phòng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
+            vật liệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý khách
+            hàng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn hàng</a>
+        </li>
+      </ul>
+    </div>
+    <div class="logout">
+      <form method="post">
+        <input type="submit" name="logout" value="Log Out">
+      </form>
+    </div>
+  </nav>
     <div class="grid">
     <div class="order_detail">
         <h2>Thông tin đơn hàng</h2>
