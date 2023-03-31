@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../../connect.php";
+require "../connect.php";
 if(isset($_POST['login'])){
     $name = $_POST['name'];
     $password = md5($_POST['password']);
@@ -8,11 +8,10 @@ if(isset($_POST['login'])){
     $count = mysqli_num_rows($checklogin);
 	if($count==1){
 		$_SESSION["admin_login"] = true;
-		header("location:../FrontEnd/html/indexAdmin.php");
+		header("location:html/indexAdmin.php");
 	}
 	else{
-		// header("location:index.php");
-		echo "no ok";
+		header("location:html/loginAdmin.php");
 	}
 }
 ?>

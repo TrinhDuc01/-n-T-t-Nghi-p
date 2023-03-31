@@ -1,0 +1,16 @@
+.order_detail{
+    width: 90%;
+    margin: 20px auto;
+    padding-left: 50px;
+}
+
+h3,h2,h4{
+    margin-top: 20px;
+     
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
