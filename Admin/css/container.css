@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    width: 100%;
+}
+.list{
+    width: 50%;
+    margin-left: 20px;
+}
+th, td{
+    padding: 8px 18px;
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.btn-primary{
+    color: #0d79af;
+}
+
+.btn-danger{
+    color: #ec2727;
+}
+
+form{
+    width: 45%;
+}
+
+.title-manage{
+    padding: 10px  20px 10px 0;
+    font-size: 20px;
+}
+
+.container input{
+    width: 50%;
+    margin: 10px 0 20px 0;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.add{
+    padding: 6px 12px;
+    color: white;
+    background-color: #0d79af;
+    border: none;
+    border-radius: 5px;
+    margin-top: 6px;
+}
+

@@ -25,73 +25,37 @@ if (isset($_REQUEST['id'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trang chủ Admin</title>
+  <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
-  <link href="../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/navbar.css">
+  <link rel="stylesheet" href="../../../css/container.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
 </head>
 
 <body>
-  <nav>
-    <div class="navbar">
-      <ul style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
-            sản phẩm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
-            danh mục</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
-            phòng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
-            vật liệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý khách
-            hàng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn hàng</a>
-        </li>
-      </ul>
-    </div>
-    <div class="logout">
-      <form method="post">
-        <input type="submit" name="logout" value="Log Out">
-      </form>
-    </div>
-  </nav>
-  <div>
+  <?php
+  require "../Nav.php ";
+  ?>
+    <div class="container">
     <form method="post">
-      <fieldset>
-        <legend>Sửa danh mục sản phẩm</legend>
-        <div class="mb-3">
-          <label for="disabledTextInput" class="form-label">Tên danh mục sản phẩm</label>
-          <input type="text" name="category_name" value="<?php echo $row['category_name'] ?>" id="disabledTextInput"
-            class="form-control" placeholder="Nhập...">
-          <div class="text-danger">
-            <?php echo isset($error['category_name']) ? $error['category_name'] : ''; ?>
-          </div>
-          <label for="room_id" class="form-label">Danh mục thuộc phòng</label>
-          <select class="form-select" name="room_id" id="room_id" aria-label="Default select example">
-            <?php
-            $query3 = mysqli_query($connect, "SELECT * FROM room");
-            while ($row3 = mysqli_fetch_array($query3)) {
-              ?>
-              <option value="<?php echo $row3['room_id'] ?>" <?php echo (($row['room_id'] == $row3['room_id']) ? 'selected' : ''); ?>><?php echo $row3['room_name']; ?></option>
-              <?php
-            }
+        <p class="title-manage">Sửa danh mục sản phẩm</p>
+        <label for="category_name" class="form-label">Tên danh mục sản phẩm</label><br>
+        <input type="text" name="category_name" value="<?php echo $row['category_name'] ?>" id="disabledTextInput" required placeholder="Nhập..."><br>
+        <label for="room_id" class="form-label">Danh mục thuộc phòng</label>
+        <select name="room_id">  
+          <?php
+          $query3 = mysqli_query($connect, "SELECT * FROM room");
+          while ($row3 = mysqli_fetch_array($query3)) {
             ?>
-          </select>
-        </div>
+            <option value="<?php echo $row3['room_id']?>" <?php echo (($row['room_id']==$row3['room_id'])?'selected':''); ?>><?php echo $row3['room_name']; ?></option>
+            <?php
+          }
+          ?>
+        </select><br>
         <button type="submit" onclick="if(ConfirmUpdate()==0) return false" name="edit_cate"
-          class="btn btn-primary">Sửa</button>
-      </fieldset>
+          class="add">Sửa</button>
     </form>
-  </div>
+    </div>
 </body>
 
 </html>

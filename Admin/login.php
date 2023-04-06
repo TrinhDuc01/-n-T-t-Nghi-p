@@ -8,10 +8,10 @@ if(isset($_POST['login'])){
     $count = mysqli_num_rows($checklogin);
 	if($count==1){
 		$_SESSION["admin_login"] = true;
-		header("location:html/indexAdmin.php");
+		header("location:html/Manage/ManageProduct/CreateReadDeleteProduct.php");
 	}
 	else{
 		header("location:html/loginAdmin.php");
 	}
 }
-?>
+?>	

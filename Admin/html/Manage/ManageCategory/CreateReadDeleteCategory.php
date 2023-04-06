@@ -43,115 +43,41 @@ $stt = 0;
   <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
+  <link rel="stylesheet" href="../../../css/container.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
 </head>
 
 <body>
-
-  <nav>
-      <ul style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
-            sản phẩm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
-            danh mục</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
-            phòng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
-            vật liệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý khách
-            hàng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn hàng</a>
-        </li>
-      </ul>
-    <div class="logout">
-      <form method="post">
-        <input type="submit" name="logout" value="Log Out">
-      </form>
-    </div>
-  </nav>
-  <div style="font-family: sans-serif;font-size: 20px;margin: 20px 0px 20px 24px;">Danh sách danh mục sản phẩm</div>
+  <?php
+  require "../Nav.php ";
+  ?>
+  
   <div class="container">
-    <div class="show-table">
-      <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Tên danh mục</th>
-            <th>Tên phòng</th>
-            <th>Thao tác</th>
-          </tr>
-        </thead>
-        <tbody>
-
+    <div class="list">
+    <p class="title-manage">Danh sách danh mục sản phẩm</p>
+      <?php
+      require "../paginationListTable.php";
+      pagination_List_Table('product_category','category_id', 10, ['STT', 'Tên danh mục', 'Thao tác'], ['category_name'],'UpdateCategory');
+      ?>
+    </div>
+    <form method="post">
+      <p class="title-manage">Thêm danh mục sản phẩm</p>
+        <label for="category_name" class="form-label">Tên danh mục sản phẩm</label><br>
+        <input type="text" name="category_name" id="disabledTextInput" required placeholder="Nhập..."><br>
+        <label for="room_id" class="form-label">Danh mục thuộc phòng</label>
+        <select name="room_id">  
           <?php
-          $query = mysqli_query($connect, "SELECT * FROM product_category inner join room on product_category.room_id = room.room_id");
-          while ($row = mysqli_fetch_array($query)) {
-            $stt++;
+          $query3 = mysqli_query($connect, "SELECT * FROM room");
+          while ($row3 = mysqli_fetch_array($query3)) {
             ?>
-            <tr>
-              <th>
-                <?php echo $stt; ?>
-              </th>
-              <td>
-                <?php echo $row['category_name']; ?>
-              </td>
-              <td>
-                <?php echo $row['room_name']; ?>
-              </td>
-              <td>
-                <a href="UpdateCategory.php?<?php echo 'id=' . $row['category_id']; ?>" class="btn btn-primary">
-                  <i class="fas fa-edit"></i>
-                </a>
-                <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'id=' . $row['category_id']; ?>"
-                  class="btn btn-danger">
-                  <i class="fas fa-trash-alt"></i>
-                </a>
-              </td>
-            </tr>
+            <option value="<?php echo $row3['room_id'] ?>"><?php echo $row3['room_name'] ?></option>
             <?php
           }
           ?>
-        </tbody>
-      </table>
-    </div>
-    <div class="form-them">
-      <form method="post">
-        <fieldset>
-          <legend>Thêm danh mục sản phẩm</legend>
-          <div>
-            <label for="disabledTextInput" class="form-label">Tên danh mục sản phẩm</label>
-            <input type="text" name="category_name" id="disabledTextInput" required placeholder="Nhập...">
-            <div class="text-danger">
-              <?php echo isset($error['category_name']) ? $error['category_name'] : ''; ?>
-            </div>
-            <label for="room_id" class="form-label">Danh mục thuộc phòng</label>
-            <select class="form-select" name="room_id" id="room_id" aria-label="Default select example">
-              <?php
-              $query3 = mysqli_query($connect, "SELECT * FROM room");
-              while ($row3 = mysqli_fetch_array($query3)) {
-                ?>
-                <option value="<?php echo $row3['room_id'] ?>"><?php echo $row3['room_name'] ?></option>
-                <?php
-              }
-              ?>
-            </select>
-          </div>
-          <button type="submit" name="add_cate">Thêm</button>
-        </fieldset>
-      </form>
-    </div>
+        </select><br>
+      <button class="add" type="submit" name="add_cate">Thêm</button>
+    </form>
   </div>
-
 </body>
 
 </html>
