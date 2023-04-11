@@ -41,6 +41,7 @@ $stt = 0;
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="../../../css/container.css">
   <link rel="stylesheet" href="../../../css/pagination.css">
+  <link rel="stylesheet" href="../../../css/table.css">
 </head>
 
 <body>

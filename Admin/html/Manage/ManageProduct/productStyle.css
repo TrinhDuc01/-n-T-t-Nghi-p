@@ -1,5 +1,77 @@
-img{
-    display: block;
+img {
+  display: block;
   width: 160px;
   height: auto;
+}
+
+.form_product {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+label{
+  text-align: left;
+  margin-top: 10px;
+}
+
+.title-manage {
+  padding: 10px 20px 10px 0;
+  font-size: 20px;
+}
+
+.add {
+  padding: 6px 12px;
+  color: white;
+  background-color: #0d79af;
+  border: none;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+
+.btn-primary{
+  color: #0d79af;
+}
+
+.btn-danger{
+  color: #ec2727;
+}
+
+.success{
+  padding: 6px 12px;
+  color: white;
+  background-color: #0d79af;
+  border: none;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+
+
+.form_product input{
+  width: 100%;
+  margin: 5px 0 0px 0;
+  height: 30px;
+  padding-left: 10px;
+}
+select{
+  width: 100%;
+  margin: 5px 0 0px 0;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.image-desc{
+  display: flex;
+}
+
+.set_status{
+  text-align: left;
+}
+
+.set_status input{
+  float: left;
+  position: relative;
+  right: 200px; 
 }

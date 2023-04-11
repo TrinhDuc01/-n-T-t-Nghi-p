@@ -2,21 +2,10 @@
     display: flex;
     justify-content: space-between;
 }
-table{
-    width: 100%;
-}
+
 .list{
     width: 50%;
     margin-left: 20px;
-}
-th, td{
-    padding: 8px 18px;
-    text-align: center;
-}
-
-table, th, td{
-    border: 1px solid #000;
-    border-collapse: collapse;
 }
 
 .btn-primary{

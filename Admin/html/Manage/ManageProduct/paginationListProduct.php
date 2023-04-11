@@ -79,7 +79,7 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
                     }
                     ?>
                     <td>
-                        <a href="<?php echo $duongdan ?>.php?<?php echo 'id=' . $row[$ma]; ?>" class="btn-primary">
+                        <a href="<?php echo $duongdan ?>.php?<?php echo 'e_id=' . $row[$ma]; ?>" class="btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
                         <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'id=' . $row[$ma]; ?>"

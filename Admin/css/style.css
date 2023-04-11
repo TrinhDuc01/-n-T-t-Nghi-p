@@ -1,34 +1,34 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Bop-bin', sans-serif;
 }
+
 @font-face {
     font-family: 'Bop-bin';
     src:
-    url("../../font/Poppins-Light.ttf"),
-    url("../../font/Poppins-LightItalic.ttf"),
-    url("../../font/Poppins-Bold.ttf"),
-    url("../../font/Poppins-BoldItalic.ttf"),
+        url("../../font/Poppins-Light.ttf"),
+        url("../../font/Poppins-LightItalic.ttf"),
+        url("../../font/Poppins-Bold.ttf"),
+        url("../../font/Poppins-BoldItalic.ttf"),
 }
 
-a{
+a {
     text-decoration: none;
     color: #000;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.container form{
+.container form {
     margin-left: 30px;
 }
-
-select{
-    
+body::-webkit-scrollbar {
+    display: none;
 }

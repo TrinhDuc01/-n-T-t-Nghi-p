@@ -28,8 +28,14 @@ if (isset($_GET['huy_id'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trang chủ Admin</title>
-  <link rel="stylesheet" type="text/css" href="../../../bootstrap-5.0.2-dist/css/bootstrap.css">
-  <link href="../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <title>Trang chủ Admin</title>
+  <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../../css/navbar.css">
+  <link rel="stylesheet" href="../../../css/table.css">
+  <link rel="stylesheet" href="productStyle.css">
+  <link rel="stylesheet" href="../../../css/table.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
 </head>
 
 <body>

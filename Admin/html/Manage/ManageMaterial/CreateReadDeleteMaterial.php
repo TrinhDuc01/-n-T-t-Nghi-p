@@ -40,6 +40,7 @@ $stt = 0;
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="../../../css/container.css">
+  <link rel="stylesheet" href="../../../css/table.css">
   <link rel="stylesheet" href="../../../css/pagination.css">
 </head>
 

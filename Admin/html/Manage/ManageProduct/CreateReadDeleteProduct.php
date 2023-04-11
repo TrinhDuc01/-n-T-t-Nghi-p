@@ -34,8 +34,10 @@ $stt = 0;
   <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
-  <link rel="stylesheet" href="../../../css/container.css">
+  <link rel="stylesheet" href="../../../css/table.css">
   <link rel="stylesheet" href="productStyle.css">
+  <link rel="stylesheet" href="../../../css/table.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
 </head>
 
 <body>
@@ -47,9 +49,8 @@ $stt = 0;
     Thêm</a></p>
   <?php
       require "./paginationListProduct.php";
-      pagination_List_Table('product',['material','product_category'],['material_id','category_id'],'product_id', 10, ['STT', 'Tên sản phẩm','Hình ảnh','Giá','Mô tả','Số lượng','Chất liệu','Danh mục','Thao tác'], ['product_name','product_image','product_price','product_description','product_quantity','material_name','category_name'], 'UpdatProduct');
+      pagination_List_Table('product',['material','product_category'],['material_id','category_id'],'product_id', 5, ['STT', 'Tên sản phẩm','Hình ảnh','Giá','Mô tả','Số lượng','Chất liệu','Danh mục','Thao tác'], ['product_name','product_image','product_price','product_description','product_quantity','material_name','category_name'], 'UpdateProduct');
       ?>
-  </div>
       
 </body>
 
