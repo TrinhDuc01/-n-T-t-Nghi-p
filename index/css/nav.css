@@ -10,7 +10,7 @@ nav {
     margin: 0 auto;
     box-shadow: 0px 5px 10px #ccc;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 ul {
@@ -39,7 +39,7 @@ nav ul li:hover>a {
     color: #27678f;
 }
 
-ul li:hover i {
+ul li:hover .fa-chevron-down {
     transform: rotate(180deg);
 }
 
@@ -73,4 +73,9 @@ nav li:hover>ul {
 nav>ul li>ul li>ul {
     margin-left: 152px;
     margin-top: -40px;
+}
+
+.fa-bag-shopping{
+    line-height: 40px;
+    padding-left: 5px;
 }

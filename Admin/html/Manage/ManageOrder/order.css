@@ -14,3 +14,20 @@ h3,h2,h4{
     grid-template-columns: 50% 50%;
 }
 
+.btn{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-danger{
+    background-color: #ff1616;
+}
+
+.btn-primary{
+    background-color: #14b1dd;
+}
+
+.btn-success{
+    background-color: #14b1dd;
+}

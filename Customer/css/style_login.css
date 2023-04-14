@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --success-color: #2691d9;
+    --error-color: #e74c3c;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(-10deg, #39b8f7e0, #e6faff);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'BeVietnamPro-Black', sans-serif;
+}
+@font-face {
+    font-family: 'BeVietnamPro-Black';
+    src:
+    url("./static/Montserrat-Medium.ttf"),
+    url("./static/Montserrat-MediumItalic.ttf"),
+    url("./static/Montserrat-Bold.ttf"),
+    url("./static/Montserrat-BoldItalic.ttf");
+}
+
+.container{
+    width: 900px;
+    display: flex;
+}
+
+.container > .login,.register{
+    width: 45%;
+    margin: 0 auto;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.register>h1{
+    text-align: center;
+}
+
+.login>h1{
+    text-align: center;
+}
+
+.form-control{
+    width: 100%;
+    position: relative;
+    margin: 40px 0 0 0;
+}
+
+.form-control > input{
+    width: 100%;
+    text-align: left;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #adadad;
+}
+
+.form-control span{
+    position: absolute;
+    border-bottom: 3px solid var(--success-color);
+    left: 0;
+    top: 39px;
+    width: 0%;
+    transition: 0.3s;
+}
+
+.form-control > input:focus ~ span{
+    width: 100%;
+}
+
+.form-control.error small{
+    color: var(--error-color);
+}
+
+.form-control.error input{
+    border-bottom: 2px solid var(--error-color);
+}
+
+.btn-submit {
+    margin: 25px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--success-color);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-submit:hover{
+    background-color: #1b5f8d;
+}
+
+.link{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: var(--success-color);
+}
+
+.link:hover a{
+    cursor: pointer;
+    text-decoration: underline var(--success-color);
+}
+
+.error{
+    color: var(--error-color);
+    width: 100%;
+    font-size: 14px;
+}

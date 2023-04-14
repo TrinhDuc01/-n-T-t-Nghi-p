@@ -13,13 +13,9 @@ if (isset($_POST['logout'])) {
 
 if (isset($_GET['duyet_id'])) {
   $duyet_id = $_GET['duyet_id'];
-  mysqli_query($connect, "UPDATE order_p SET order_status=1 WHERE order_id='$duyet_id'");
+  mysqli_query($connect, "UPDATE order_p SET order_status=1 WHERE order_id='$duyet_id' AND order_status=0 AND order_status_customer=1");
 }
 
-if (isset($_GET['huy_id'])) {
-  $huy_id = $_GET['huy_id'];
-  mysqli_query($connect, "UPDATE order_p SET order_status=0 WHERE order_id='$huy_id'");
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,15 +23,13 @@ if (isset($_GET['huy_id'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trang chủ Admin</title>
-  <title>Trang chủ Admin</title>
+  <title>Quản lý đơn hàng</title>
   <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="../../../css/table.css">
-  <link rel="stylesheet" href="productStyle.css">
-  <link rel="stylesheet" href="../../../css/table.css">
   <link rel="stylesheet" href="../../../css/pagination.css">
+  <link rel="stylesheet" href="order.css">
 </head>
 
 <body>
@@ -122,9 +116,6 @@ if (isset($_GET['huy_id'])) {
             <td>
               <a href="?<?php echo 'duyet_id=' . $row['order_id']; ?>" class="btn btn-primary">
                 <i class="fa-solid fa-check"></i>
-              </a>
-              <a href="?<?php echo 'huy_id=' . $row['order_id']; ?>" class="btn btn-danger">
-                <i class="fa-solid fa-xmark"></i>
               </a>
             </td>
             <td>

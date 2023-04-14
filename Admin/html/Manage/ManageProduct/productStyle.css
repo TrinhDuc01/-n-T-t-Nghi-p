@@ -64,6 +64,11 @@ select{
 
 .image-desc{
   display: flex;
+  flex-wrap: wrap;
+}
+
+.image-desc img{
+  flex-basis: 33%;
 }
 
 .set_status{
