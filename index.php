@@ -19,7 +19,7 @@ require "connect.php";
 
 <body>
 	<?php
-		require './php/header_nav.php';
+		require './php/header_nav.php'; // import header va nav vao trang chu
 	?>
 	<div class="content">
 		<div class="product_list">

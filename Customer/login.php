@@ -2,6 +2,8 @@
 session_start();
 require "../connect.php";
 $error['account']='';
+
+//chuc nang dang nhap
 if(isset($_POST['login'])){
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);

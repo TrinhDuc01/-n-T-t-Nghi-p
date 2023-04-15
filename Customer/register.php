@@ -3,6 +3,8 @@ session_start();
 require "../connect.php";
 $error['username'] = '';
 $error['confirm_password'] = '';
+
+//chuc nang dang ky
 if(isset($_POST['register'])){
 	$username = $_POST['username'];
     $fullname = $_POST['fullname'];
