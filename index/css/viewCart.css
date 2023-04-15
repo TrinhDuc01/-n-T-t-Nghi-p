@@ -1,0 +1,25 @@
+.cart{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.cart table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.cart td{
+    border: 1px solid #ccc;
+    line-height: 40px;
+}   
+
+.cart td img{
+    height: 100px;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

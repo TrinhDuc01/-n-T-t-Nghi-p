@@ -1,6 +1,10 @@
 <?php
 session_start();
 require "connect.php";
+if (isset($_GET['logout'])) {
+	unset($_SESSION['login']);
+	header("location:index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,15 +15,14 @@ require "connect.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trang chủ</title>
 	<link rel="stylesheet" href="./index/css/header.css">
-	<link href="./icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+	<link href="./icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="./index/css/nav.css">
-	<link rel="stylesheet" href="./index/css/content.css">
 	<link rel="stylesheet" href="./index/css/content.css">
 </head>
 
 <body>
 	<?php
-		require './php/header_nav.php'; // import header va nav vao trang chu
+	require './php/header_nav.php'; // import header va nav vao trang chu
 	?>
 	<div class="content">
 		<div class="product_list">
@@ -44,7 +47,7 @@ require "connect.php";
 								echo $price . 'đ'; ?>
 							</span><br>
 							<div class="chucnang">
-								<a class="themvao" href="cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
+								<a class="themvao" href="./php/cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
 								<a class="xemthem"
 									href="./viewdetailproduct.php?idproduct=<?php echo $row['product_id'] ?>">Xem thêm</a>
 							</div>

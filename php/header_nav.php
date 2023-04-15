@@ -21,7 +21,7 @@
 		while ($row = mysqli_fetch_array($phong)) {
 			?>
 			<li>
-				<a href="./viewroom.php?roomid=<?php echo $row['room_id'] ?>">
+				<a class="nav-room" href="./viewroom.php?roomid=<?php echo $row['room_id'] ?>">
 					<?php echo $row['room_name'] ?> <i class="fa-solid fa-chevron-down"></i>
 				</a>
 				<ul>
@@ -30,7 +30,7 @@
 					$danhmuc = mysqli_query($connect, "SELECT*FROM product_category WHERE room_id = '$id'");
 					while ($indanhmuc = mysqli_fetch_array($danhmuc)) {
 						?>
-						<li><a href="./viewcategory.php?idcategory=<?php echo $indanhmuc['category_id'] ?>">
+						<li><a class="nav-cate" href="./viewcategory.php?idcategory=<?php echo $indanhmuc['category_id'] ?>">
 								<?php echo $indanhmuc['category_name'] ?>
 							</a></li>
 						<?php
@@ -43,7 +43,7 @@
 		}
 		?>
 		<li>
-			<a href="" class="cart">
+			<a class="nav-cart" href="./viewCart.php">
 				Giỏ hàng <i class="fa-solid fa-bag-shopping"></i>
 			</a>
 		</li>
