@@ -6,13 +6,13 @@ if (isset($_GET['logout'])) {
     header("location:index.php");
 }
 
-if (isset($_GET['roomid'])) {
-    $idroom = $_GET['roomid'];
+if (isset($_GET['room_id'])) {
+    $id_room = $_GET['room_id'];
 } else {
-    header('location:index.php');
+    // header('location:index.php');
 }
 
-$sql = mysqli_query($connect, "SELECT*FROM room where room_id = '$idroom'");
+$sql = mysqli_query($connect, "SELECT*FROM room where room_id = '$id_room'");
 
 
 
@@ -50,7 +50,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
         </div>
 
         <?php // phan trang
-        $queryRows = mysqli_query($connect, "SELECT * FROM product_category inner join room on product_category.room_id = room.room_id inner join product on product_category.category_id = product.category_id Where room.room_id = '$idroom'");
+        $queryRows = mysqli_query($connect, "SELECT * FROM product_category inner join room on product_category.room_id = room.room_id inner join product on product_category.category_id = product.category_id Where room.room_id = '$id_room'");
         $totalRows = mysqli_num_rows($queryRows);
         $pageSize = 9; // số dòng tối đa trong 1 trang
         $totalPage = 1; // tính  tổng số trang
@@ -79,10 +79,10 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
             <div class="categorylist">
                 <ul>
                     <?php
-                    $sql1 = mysqli_query($connect, "SELECT*FROM product_category where room_id = '$idroom'");
+                    $sql1 = mysqli_query($connect, "SELECT*FROM product_category where room_id = '$id_room'");
                     while ($row = mysqli_fetch_array($sql1)) {
                         ?>
-                        <li> <a href="./viewCategory.php?idcategory=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a> </li>
+                        <li> <a href="./viewCategory.php?id_category=<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a> </li>
                         <?php
                     }
 
@@ -92,7 +92,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
             <div class="list">
                 <ul>
                     <?php
-                    $sqlRoom = "SELECT * FROM product_category inner join room on product_category.room_id = room.room_id inner join product on product_category.category_id = product.category_id Where room.room_id = '$idroom' limit {$rowStart} , {$pageSize}";
+                    $sqlRoom = "SELECT * FROM product_category inner join room on product_category.room_id = room.room_id inner join product on product_category.category_id = product.category_id Where room.room_id = '$id_room' limit {$rowStart} , {$pageSize}";
                     $productinroom = mysqli_query($connect, $sqlRoom);
                     while ($row = mysqli_fetch_array($productinroom)) {
                         ?>
@@ -116,6 +116,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                     }
                     ?>
                 </ul>
+                Trang: <?php echo isset($_REQUEST['page'])? $_REQUEST['page']: 1?>
                 <div class="pagination">
                     <?php
                     for ($i = 1; $i <= $totalPage; $i++) {
@@ -123,7 +124,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                             echo "<a>" . $i . "</a>";
                         } else {
                             ?>
-                            <a href="?page=<?php echo $i; ?>"><?php echo $i . ' '; ?></a>
+                            <a href="?room_id=<?php echo $id_room ?>&page=<?php echo $i; ?>"><?php echo $i . ' '; ?></a>
                             <?php
                         }
                     }

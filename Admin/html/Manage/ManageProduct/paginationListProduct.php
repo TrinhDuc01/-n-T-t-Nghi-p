@@ -93,6 +93,7 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
             ?>
         </tbody>
     </table>
+    Trang: <?php echo isset($_REQUEST['page'])? $_REQUEST['page']: 1?>
     <div class="pagination">
         <?php
         for ($i = 1; $i <= $totalPage; $i++) {

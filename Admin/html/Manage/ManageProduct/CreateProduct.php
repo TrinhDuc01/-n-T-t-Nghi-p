@@ -33,13 +33,12 @@ if (isset($_POST['add_product'])) {
       $error['product_image'] = "Không đúng định dạng";
     }
   }
-  $product_status = 1;
   $created_at = date('Y-m-d H:i:s');
   $updated_at = NULL;
   //thêm sản phẩm
   if (empty($error['product_image']) && empty($error['product_name']) && empty($error['product_quantity']) && empty($error['product_price']) && empty($error['product_decription'])) {
-    $sqlInsert = "INSERT INTO product (product_name, product_price, product_description, product_quantity, product_size, product_image, product_status, material_id, category_id, created_at, updated_at) 
-        VALUES ('$product_name', '$product_price', '$product_description', '$product_quantity','$product_size','$product_image','$product_status', '$material_id', '$category_id', '$created_at', '$updated_at')";
+    $sqlInsert = "INSERT INTO product (product_name, product_price, product_description, product_quantity, product_size, product_image, material_id, category_id, created_at, updated_at) 
+        VALUES ('$product_name', '$product_price', '$product_description', '$product_quantity','$product_size','$product_image', '$material_id', '$category_id', '$created_at', '$updated_at')";
     $query = mysqli_query($connect, $sqlInsert);
     $id_product_after_insert = mysqli_insert_id($connect);
 

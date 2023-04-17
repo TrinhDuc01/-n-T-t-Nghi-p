@@ -3,12 +3,14 @@
     float: left;
     padding: 10px 16px;
     text-decoration: none;
+    border: 0.5px solid black;
 }
 
 /* add background color when user hovers on inactive class */
-.pagination a:hover:not(.active) {
+.pagination a:hover{
     background-color: #ddd;
     border-radius: 5%;
+    
 }
 
 .pagination{
