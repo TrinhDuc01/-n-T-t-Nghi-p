@@ -82,7 +82,7 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
                         <a href="<?php echo $duongdan ?>.php?<?php echo 'edit_id=' . $row[$ma]; ?>" class="btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'id=' . $row[$ma]; ?>"
+                        <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'delete_id=' . $row[$ma]; ?>"
                             class="btn-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>

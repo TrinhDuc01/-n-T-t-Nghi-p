@@ -1,0 +1,97 @@
+
+
+.product_list_title{
+    width: 90%;
+    margin: 30px auto 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px #ccc solid;
+}
+
+.product_list_title>span{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 50px;
+
+}
+
+.container{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.categorylist{
+    width: 19%;
+    margin: 70px auto 0 auto;
+    background-color: #dddbdb;
+    padding: 10px 15px;
+}
+.categorylist>ul>li{
+    line-height: 40px;
+}
+
+.categorylist>ul>li:hover a{
+    color: #27678f;
+}
+
+
+.list{
+    width: 80%;
+    margin-top: 50px;
+}
+.list >ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list >ul >li{
+    margin: 20px 0px;
+    width: 33%;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.list >ul >li:hover{
+    border: 1px solid #ccc;
+}
+
+.list >ul >li>img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list >ul >li>.product_title{
+    margin: 15px auto 30px auto;
+    font-size: 14px;
+}
+
+.list >ul >li>.product_price{
+    float: right;
+}
+
+.list >ul >li>.chucnang >a{
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #000;
+    padding: 6px 15px;
+}
+
+.list >ul >li>.chucnang{
+    margin-top: 30px;
+    visibility: hidden;
+}
+
+.list >ul >li>.chucnang>.xemthem{
+    float: right;
+}
+
+.list >ul >li>.chucnang>.themvao{
+    float: left;
+}
+
+.list >ul >li:hover .chucnang{
+    visibility: visible;
+}

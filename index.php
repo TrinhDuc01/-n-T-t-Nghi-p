@@ -18,6 +18,7 @@ if (isset($_GET['logout'])) {
 	<link href="./icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="./index/css/nav.css">
 	<link rel="stylesheet" href="./index/css/content.css">
+	<link rel="stylesheet" href="./index/css/footer.css">
 </head>
 
 <body>
@@ -59,6 +60,9 @@ if (isset($_GET['logout'])) {
 			</div>
 		</div>
 	</div>
+	<?php
+	require './php/footer.php'; // import header va nav vao trang chu
+	?>
 </body>
 
 </html>
