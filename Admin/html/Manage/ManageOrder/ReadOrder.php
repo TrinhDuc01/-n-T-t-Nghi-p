@@ -24,7 +24,7 @@ if (isset($_GET['duyet_id'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quản lý đơn hàng</title>
-  <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <link href="../../../../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="../../../css/table.css">
@@ -33,40 +33,9 @@ if (isset($_GET['duyet_id'])) {
 </head>
 
 <body>
-  <nav>
-    <div class="navbar">
-      <ul style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
-            sản phẩm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
-            danh mục</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
-            phòng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
-            vật liệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý khách
-            hàng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn hàng</a>
-        </li>
-      </ul>
-    </div>
-    <div class="logout">
-      <form method="post">
-        <input type="submit" name="logout" value="Log Out">
-      </form>
-    </div>
-  </nav>
+  <?php
+  require "../Nav.php ";
+  ?>
   <div>
     <table class="table table-bordered table-hover">
       <thead>

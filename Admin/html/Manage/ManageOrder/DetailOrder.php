@@ -29,49 +29,18 @@ if (isset($_GET['order_id'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chhi tiết đơn hàng</title>
+  <title>Chi tiết đơn hàng</title>
   <link rel="stylesheet" href="./order.css">
-  <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <link href="../../../../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="./productStyle.css">
 </head>
 
 <body>
-  <nav>
-    <div class="navbar">
-      <ul style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageProduct/CreateReadDeleteProduct.php">Quản lý
-            sản phẩm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCategory/CreateReadDeleteCategory.php">Quản lý
-            danh mục</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageRoom/CreateReadDeleteRoom.php">Quản lý
-            phòng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageMaterial/CreateReadDeleteMaterial.php">Quản lý
-            vật liệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageCustomer/ReadCustomer.php">Quản lý khách
-            hàng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../ManageOrder/ReadOrder.php">Quản lý đơn hàng</a>
-        </li>
-      </ul>
-    </div>
-    <div class="logout">
-      <form method="post">
-        <input type="submit" name="logout" value="Log Out">
-      </form>
-    </div>
-  </nav>
+<?php
+  require "../Nav.php ";
+  ?>
   <div class="grid">
     <div class="order_detail">
       <h2>Thông tin đơn hàng</h2>
@@ -107,8 +76,9 @@ if (isset($_GET['order_id'])) {
       </h4>
     </div>
     <div class="image">
-      <h4 style="display:inline;float:right;">Hình ảnh: <img
-          src="../../../img/imgProduct/<?php echo $detail_order['product_image'] ?>" alt=""></h4>
+      <h4 style="display:inline;">Hình ảnh: </h4>
+      <img
+          src="../../../img/imgProduct/<?php echo $detail_order['product_image'] ?>" alt="">
     </div>
   </div>
 

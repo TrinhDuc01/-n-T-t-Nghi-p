@@ -40,7 +40,7 @@ $stt = 0;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quản lý Danh Mục </title>
-  <link href="../../../../icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+  <link href="../../../../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
   <link rel="stylesheet" href="../../../css/container.css">
