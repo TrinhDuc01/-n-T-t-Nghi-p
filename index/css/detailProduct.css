@@ -1,0 +1,96 @@
+.container-product{
+    margin-top: 50px;
+    position: relative;
+}
+
+.container-img{
+	padding: 20px;
+	width: 50%;
+	position: relative;
+    box-shadow: 0px 10px 10px #000;
+    border-radius: 10px;
+}
+
+.slider-wrapper{
+	width: 75%;
+    margin: 50px auto;
+}
+.slider{
+	display: flex;
+	width: 100%;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	border-radius: 5px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* ẩn thanh scrollbar cho Chrome, Safari, and Opera */
+}
+
+.slider img{
+	width: 100%;
+	flex: 1 0 100%;
+	object-fit: cover;
+}
+
+.slider-nav{
+	display: flex;
+	column-gap: 10px;
+	position: absolute;
+	bottom: 51px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #000;
+	opacity: 0.5;
+	transition: 0.3s;
+}
+
+.slider-nav a:hover{
+	opacity: 1;
+}
+
+.info-product{
+    position: absolute;
+    top: 0;
+    left: 60%;
+}
+
+h3{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.line{
+    width: 10%;
+    border-bottom: 3px solid #7c7a7a;
+}
+
+
+.info-product >div{
+    margin: 20px 0;
+}
+
+.info-product > div >span{
+    padding: 3px 10px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+
+.themvaogiohang{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.themvaogiohang a{
+    background-color: #000;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #fff;
+}

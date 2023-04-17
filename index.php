@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
 							<div class="chucnang">
 								<a class="themvao" href="./php/cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
 								<a class="xemthem"
-									href="./viewDetailProduct.php?idproduct=<?php echo $row['product_id'] ?>">Xem thêm</a>
+									href="./viewDetailProduct.php?id_product=<?php echo $row['product_id'] ?>">Xem thêm</a>
 							</div>
 						</li>
 						<?php

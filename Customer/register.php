@@ -45,13 +45,14 @@ if(isset($_POST['register'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style_login.css">
     <title>Đăng kí</title>
 </head>
 <body>
     <div class="container">
     <div class="register">
-            <h1>Đăng kí</h1>
+            <h1><a href="../index.php"><i class="fa-solid fa-house-chimney"></i></a> Đăng kí</h1>
             <form action="" method="post">
             <div class="form-control">
                 <input type="email" name="username" required id="" placeholder="Email">

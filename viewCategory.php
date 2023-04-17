@@ -88,8 +88,8 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                             echo $price . 'đ'; ?>
                         </span><br>
                         <div class="chucnang">
-                            <a class="themvao" href="cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
-                            <a class="xemthem" href="./viewdetailproduct.php?idproduct=<?php echo $row['product_id'] ?>">Xem
+                            <a class="themvao" href="./php/cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
+                            <a class="xemthem" href="./viewDetailProduct.php?id_product=<?php echo $row['product_id'] ?>">Xem
                                 thêm</a>
                         </div>
                     </li>
