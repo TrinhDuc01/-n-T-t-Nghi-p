@@ -45,22 +45,22 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
     <div style="text-align: center; font-size: 30px;font-weight: 700; margin-top: 40px;">Thông tin đặt hàng</div>
     <div class="order-container">
         <div class="InFor">
-            <form action="" method="post">
+            <form action="./order.php" method="post">
                 <table>
                     <tr>
                         <td colspan=2>Thông tin người nhận</td>
                     </tr>
                     <tr>
                         <td>Họ và tên</td>
-                        <td><input type="text"></td>
+                        <td><input required name="fullname" type="text"></td>
                     </tr>
                     <tr>
                         <td>Số điện thoại</td>
-                        <td><input type="text"></td>
+                        <td><input required name="phone_number" type="text"></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
-                        <td><input type="text"></td>
+                        <td><input required name="address" type="text"></td>
                     </tr>
                     <tr>
                         <td>Hình thức thanh toán</td>
@@ -72,7 +72,8 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                         </td>
                     </tr>
                     <tr>
-                        <td colspan=2><a href="./order.php" class="order">Đặt hàng</a>
+                        <td colspan=2>
+                            <input type="submit" name="order" class="order" value="Đặt hàng">
                         </td>
                     </tr>
                 </table>

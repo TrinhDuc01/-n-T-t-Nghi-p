@@ -35,6 +35,11 @@ td img{
     padding: 5px 10px;
     border-radius: 5px;
     color: aliceblue;
+    border: none;
+}
+
+.order:hover{
+    background-color: rgb(25, 120, 135);
 }
 
 select{
