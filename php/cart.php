@@ -23,7 +23,7 @@ if(isset($_SESSION['login'])){
             'quantity'=> 1
         ];
         //them vao gio hang
-        
+        if($product['product_quantity']>0){
         if(isset($_SESSION['cart'][$id_customer][$id])){
             //nếu số lượng sản phẩm trong database > số lượng sản phẩm trong giỏ hàng thì mới cho thêm]
             if($_SESSION['cart'][$id_customer][$id]['quantity']<$product['product_quantity']){
@@ -38,6 +38,10 @@ if(isset($_SESSION['login'])){
             $_SESSION['cart'][$id_customer][$id] = $item;
         
         }
+        }
+        else{
+            $_SESSION['error']['overload'] = 'Số lượng sản phẩm không đủ';
+        } 
         
         
         echo '<pre>';

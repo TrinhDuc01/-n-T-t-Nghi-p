@@ -44,7 +44,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
     <div style="text-align: center;color: red;" class="cart">
         <?php if (isset($_SESSION['error']['overload']))
             echo $_SESSION['error']['overload'];
-        $_SESSION['variable'] = ''; ?>
+        unset($_SESSION['variable']); ?>
     </div>
     <div class="cart">
         <?php
