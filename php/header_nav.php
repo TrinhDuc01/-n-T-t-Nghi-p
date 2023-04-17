@@ -6,7 +6,7 @@
 	</div>
 	<?php
 	if (isset($_SESSION['login'])) {
-		echo '<a class="account" href="./Customer/infoUser.php">' . '<i class="fa-solid fa-user"></i>' . $_SESSION['login']['customer_fullname'] . '</a>' .
+		echo '<a class="account" href="./Customer/customerInfo.php">' . '<i class="fa-solid fa-user"></i>' . $_SESSION['login']['customer_fullname'] . '</a>' .
 			'<a style="color: red" href="?logout=123" type="submit">Đăng xuất</a>';
 		;
 	} else {
