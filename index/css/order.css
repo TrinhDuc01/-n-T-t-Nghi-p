@@ -1,0 +1,47 @@
+.order-container{
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+}
+
+
+table{
+    width: 60%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td{
+    border: 1px solid #ccc;
+    line-height: 40px;
+}   
+
+td img{
+    height: 100px;
+}
+
+
+.InFor{
+    width: 40%;
+    display: inline-block;
+}
+
+.InFor form > table{
+    width: 80%;
+}
+
+.order{
+    background-color: rgb(35, 168, 189);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+select{
+    padding: 5px 10px;
+}
+
+
+input{
+    height: 30px;
+}
