@@ -31,7 +31,7 @@ $show = mysqli_fetch_array($layuser);
 		<div class="container-f">
 			<ul>
 				<li><a href="./customerInfor.php">Thông tin</a></li>
-				<li><a href="./viewOrder.php">Đơn hàng</a></li>
+				<li><a href="./viewListOrder.php">Đơn hàng</a></li>
 				<li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
 				<li><a href="./changeInfo.php">Đổi thông tin</a></li>
 			</ul>

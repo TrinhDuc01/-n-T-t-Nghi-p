@@ -18,6 +18,7 @@ if (isset($_GET['logout'])) {
 	<link href="./icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="./index/css/nav.css">
 	<link rel="stylesheet" href="./index/css/content.css">
+	<link rel="stylesheet" href="./Admin/css/pagination.css">
 	<link rel="stylesheet" href="./index/css/footer.css">
 </head>
 
@@ -31,10 +32,36 @@ if (isset($_GET['logout'])) {
 				<span>Sản phẩm mới</span>
 				<a href="">Xem tất cả <i class="fa-solid fa-chevron-right"></i></a>
 			</div>
+			<?php // phan trang
+			$queryRows = mysqli_query($connect, "SELECT * FROM `product`");
+			$totalRows = mysqli_num_rows($queryRows);
+			$pageSize = 12; // số dòng tối đa trong 1 trang
+			$totalPage = 1; // tính  tổng số trang
+			
+			// print_r($tencot);
+			
+			if ($totalRows % $pageSize == 0) {
+				$totalPage = $totalRows / $pageSize;
+			} else {
+				$totalPage = (int) ($totalRows / $pageSize) + 1;
+			}
+
+			$rowStart = 1;
+			$pageCurrent = 1;
+
+			if ((!isset($_GET['page'])) || ($_GET['page'] == 1)) {
+				$rowStart = 0;
+				$pageCurrent = 1;
+			} else {
+				$rowStart = ($_GET['page'] - 1) * $pageSize;
+				$pageCurrent = $_GET['page'];
+			}
+
+			?>
 			<div class="list">
 				<ul>
 					<?php
-					$newproduct = mysqli_query($connect, "SELECT * FROM `product` ORDER BY product_id DESC LIMIT 8");
+					$newproduct = mysqli_query($connect, "SELECT * FROM `product` ORDER BY product_id DESC LIMIT {$rowStart} , {$pageSize}");
 					while ($row = mysqli_fetch_array($newproduct)) {
 						?>
 						<li>
@@ -48,7 +75,8 @@ if (isset($_GET['logout'])) {
 								echo $price . 'đ'; ?>
 							</span><br>
 							<div class="chucnang">
-								<a class="themvao" href="./php/cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào giỏ</a>
+								<a class="themvao" href="./php/cart.php?id=<?php echo $row['product_id'] ?>">Thêm vào
+									giỏ</a>
 								<a class="xemthem"
 									href="./viewDetailProduct.php?id_product=<?php echo $row['product_id'] ?>">Xem thêm</a>
 							</div>
@@ -58,11 +86,27 @@ if (isset($_GET['logout'])) {
 					?>
 				</ul>
 			</div>
+			Trang:
+			<?php echo isset($_REQUEST['page']) ? $_REQUEST['page'] : 1 ?>
+			<div class="pagination">
+				<?php
+				for ($i = 1; $i <= $totalPage; $i++) {
+					if ($pageCurrent == $i) {
+						echo "<a>" . $i . "</a>";
+					} else {
+						?>
+						<a href="?page=<?php echo $i; ?>"><?php echo $i . ' '; ?></a>
+						<?php
+					}
+				}
+				?>
+			</div>
 		</div>
 	</div>
-	<?php
-	require './php/footer.php'; // import header va nav vao trang chu
-	?>
+
 </body>
+<?php
+require './php/footer.php'; // import header va nav vao trang chu
+?>
 
 </html>

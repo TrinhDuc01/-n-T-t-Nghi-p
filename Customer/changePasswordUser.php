@@ -55,9 +55,9 @@ if (isset($_POST['changepass'])) {
     <div class="container-f">
         <ul>
             <li><a href="./customerInfo.php">Thông tin</a></li>
-            <li><a href="./ViewOrder.php">Đơn hàng</a></li>
-            <li><a href="./ChangePasswordUser.php">Đổi mật khẩu</a></li>
-            <li><a href="./ChangeInfo.php">Đổi thông tin</a></li>
+            <li><a href="./viewListOrder.php">Đơn hàng</a></li>
+            <li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
+            <li><a href="./changeInfo.php">Đổi thông tin</a></li>
         </ul>
         <div class="view-info">
             <form method="post">
@@ -70,16 +70,21 @@ if (isset($_POST['changepass'])) {
                 <table>
                     <tr>
                         <td>Mật khẩu cũ</td>
-                        <td><input required type="password" name="oldpass" id=""></td>
+                        <td><input class="password" required type="password" name="oldpass" id=""><button type="button" class="showHide" onclick="showHidePass(0)"><i
+                                    class="fa-solid fa-eye-slash"></i></button>
+                        </td>
                     </tr>
                     <tr></tr>
                     <tr>
                         <td>Mật khẩu mới</td>
-                        <td><input required type="password" name="newpass" id=""></td>
+                        <td><input class="password" required type="password" name="newpass" id=""><button type="button" class="showHide"
+                                onclick="showHidePass(1)"><i class="fa-solid fa-eye-slash"></i></button></td>
                     </tr>
                     <tr>
                         <td>Xác nhận mật khẩu mới</td>
-                        <td><input required type="password" name="confirmpass" id=""></td>
+                        <td><input class="password" required type="password" name="confirmpass" id=""><button type="button"
+                                class="showHide" onclick="showHidePass(2)"><i class="fa-solid fa-eye-slash"></i></button>
+                        </td>
                     </tr>
                     <tr class="btn">
                         <td colspan="2">
@@ -91,6 +96,7 @@ if (isset($_POST['changepass'])) {
         </div>
     </div>
 </body>
+<script src="../js/showHidePassword.js"></script>
 
 </html>
 <?php

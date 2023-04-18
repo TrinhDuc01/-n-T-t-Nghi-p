@@ -68,14 +68,14 @@ if (isset($_POST['register'])) {
                 </div>
                 <div class="form-control">
                     <input class="password" type="password" name="password" required id="" placeholder="Mật khẩu">
-                    <button type="button" class="showHide" onclick="showHidePass()"><i
+                    <button type="button" class="showHide" onclick="showHidePass(0)"><i
                             class="fa-solid fa-eye-slash"></i></button>
                     <span></span>
                     <div></div>
                 </div>
                 <div class="form-control">
                     <input  class="password" type="password" name="confirm_password" required id="" placeholder="Confirm Password">
-                    <button type="button" class="showHide" onclick="showHidePassConfirm()"><i
+                    <button type="button" class="showHide" onclick="showHidePass(1)"><i
                             class="fa-solid fa-eye-slash"></i></button>
                     <span></span>
                     <div class="error">

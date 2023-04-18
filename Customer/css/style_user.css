@@ -87,3 +87,15 @@ input{
 .btn{
     text-align: center;
 }
+
+.showHide{
+    right: 10px;
+    background-color: white;
+    border: none;
+    position: relative;
+    right: 20px;
+}
+.showHide > i{
+    transform: scale(130%);
+}
+

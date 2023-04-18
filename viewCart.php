@@ -41,7 +41,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
     <?php
     require './php/header_nav.php'; // import header va nav vao trang chu
     ?>
-    <div style="text-align: center;color: red;" class="cart">
+    <div style="text-align: center;color: red;" class="cart-overload">
         <?php if (isset($_SESSION['error']['overload']))
             echo $_SESSION['error']['overload'];
         unset($_SESSION['variable']); ?>

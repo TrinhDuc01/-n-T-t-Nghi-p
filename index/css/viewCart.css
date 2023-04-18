@@ -1,6 +1,10 @@
 .cart{
     width: 90%;
     margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 60vh;
 }
 
 .cart table{
@@ -18,8 +22,3 @@
     height: 100px;
 }
 
-.cart{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

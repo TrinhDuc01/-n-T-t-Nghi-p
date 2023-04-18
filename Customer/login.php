@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
                 </div>
                 <div class="form-control">
                     <input class="password" type="password" required name="password" id="" placeholder="Mật khẩu">
-                    <button type="button" class="showHide" onclick="showHidePass()"><i class="fa-solid fa-eye-slash"></i></button>
+                    <button type="button" class="showHide" onclick="showHidePass(0)"><i class="fa-solid fa-eye-slash"></i></button>
                     <span></span>
                     <div class="error">
                         <?php echo $error['account']; ?>

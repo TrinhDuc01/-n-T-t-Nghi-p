@@ -1,0 +1,7 @@
+.view-info{
+    display: flex;
+}
+
+h4,h2{
+    padding-bottom: 15px;
+}
