@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Bop-bin', sans-serif;
+    height: 100vh;
+}
+@font-face {
+    font-family: 'Bop-bin';
+    src:
+    url("../../font/Poppins-Light.ttf"),
+    url("../../font/Poppins-LightItalic.ttf"),
+    url("../../font/Poppins-Bold.ttf"),
+    url("../../font/Poppins-BoldItalic.ttf"),
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.header{
+    line-height: 60px;
+    font-size: 20px;
+    background-color: rgb(13, 164, 239);
+    padding: 0 0 0 30px;
+}
+
+.header a{
+    color: white;
+}
+
+.header i{
+    color: white;
+    transition: 0.3s;
+}
+
+.header i:hover{
+    color: #ccc;
+}
+
+.container-f{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+    font-size: 20px;
+    height: 95vh;
+    border-right: 1px solid rgb(13, 164, 239);
+}
+
+li{
+    padding: 20px 40px;
+    border-bottom: 1px solid rgb(13, 164, 239);
+}
+
+.view-info{
+    padding: 10px 0 0 0;
+    margin: 0 30px;
+}
+
+td{
+    padding: 10px 20px;
+    font-size: 20px;
+}
+input{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.success{
+    background-color: rgb(51, 178, 242);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.3s;
+}
+.success:hover{
+    background-color: rgb(32, 140, 176);
+}
+
+.btn{
+    text-align: center;
+}

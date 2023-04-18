@@ -121,3 +121,15 @@ a{
     width: 100%;
     font-size: 14px;
 }
+
+.showHide{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    background-color: white;
+    border: none;
+}
+.showHide > i{
+    transform: scale(130%);
+}

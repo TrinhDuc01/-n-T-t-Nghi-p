@@ -48,7 +48,8 @@ if (isset($_POST['login'])) {
                     <div></div>
                 </div>
                 <div class="form-control">
-                    <input type="password" required name="password" id="" placeholder="Mật khẩu">
+                    <input class="password" type="password" required name="password" id="" placeholder="Mật khẩu">
+                    <button type="button" class="showHide" onclick="showHidePass()"><i class="fa-solid fa-eye-slash"></i></button>
                     <span></span>
                     <div class="error">
                         <?php echo $error['account']; ?>
@@ -63,7 +64,7 @@ if (isset($_POST['login'])) {
     </div>
 
 
-    <script src="../js/login.js"></script>
+    <script src="../js/showHidePassword.js"></script>
 </body>
 
 </html>
