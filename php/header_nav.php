@@ -1,8 +1,10 @@
 <header>
 	<a href="index.php"><img src="./index/logo/logobinhminh.png"></a>
 	<div class="search">
-		<input type="text" placeholder="Tìm kiếm sản phẩm">
-		<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+		<form action="./searchProduct.php" method="get">
+			<input required type="text" name="keyword" placeholder="Tìm kiếm sản phẩm">
+			<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+		</form>
 	</div>
 	<?php
 	if (isset($_SESSION['login'])) {
