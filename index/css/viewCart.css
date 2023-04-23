@@ -22,3 +22,14 @@
     height: 100px;
 }
 
+.button-quantity{
+    background-color: #5eadf6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.cart-overload{
+    text-align: center;color: red;
+    padding-top: 10px;
+}

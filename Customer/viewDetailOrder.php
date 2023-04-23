@@ -40,7 +40,7 @@ if (isset($_GET['huydon'])) {
 
 <body>
     <div class="header">
-        <a href="../../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
+        <a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
             <?php echo $user['customer_fullname']; ?>
         </a>
     </div>

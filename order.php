@@ -29,7 +29,7 @@ if (isset($_SESSION['login'])) {
                 mysqli_query($connect, $sql_decrease_quantity);
             }
             unset($_SESSION['cart'][$id_customer]);
-            header('location:./Customer/html/ViewOrder.php');
+            header('location:./Customer/viewListOrder.php');
 
         }
 

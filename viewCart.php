@@ -41,7 +41,7 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
     <?php
     require './php/header_nav.php'; // import header va nav vao trang chu
     ?>
-    <div style="text-align: center;color: red;" class="cart-overload">
+    <div class="cart-overload">
         <?php if (isset($_SESSION['error']['overload']))
             echo $_SESSION['error']['overload'];
         unset($_SESSION['variable']); ?>
@@ -81,7 +81,9 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                             </td>
                             <td><img src="./Admin/img/imgProduct/<?php echo $value['image'] ?>"></td>
                             <td>
+                                <a class="button-quantity" href="./php/cart.php?reduce=1&id=<?php echo $value['id'] ?>">-</a>
                                 <?php echo $value['quantity'] ?>
+                                <a class="button-quantity" href="./php/cart.php?id=<?php echo $value['id'] ?>">+</a>
                             </td>
                             <td>
                                 <?php echo number_format($value['price'] * $value['quantity']) . 'đ' ?>
