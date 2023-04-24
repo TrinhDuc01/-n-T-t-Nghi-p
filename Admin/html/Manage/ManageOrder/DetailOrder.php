@@ -13,16 +13,15 @@ if (isset($_POST['logout'])) {
 //lay don hang theo id
 if (isset($_GET['order_id'])) {
   $order_id = $_GET['order_id'];
-  $sql = "SELECT 
-    order_id,product_name,customer_phone,customer_fullname,customer_address,product_price,order_p.order_quantity,product_image,order_status_customer,order_p.created_at,order_p.updated_at
-    FROM order_p inner join product on order_p.product_id=product.product_id 
-    inner join customer on order_p.customer_id = customer.customer_id 
-    WHERE order_id = '$order_id'";
+  $sql = "SELECT *
+    FROM detail_order inner join product on detail_order.product_id=product.product_id 
+    WHERE detail_order.order_id = '$order_id'";
   $donhang = mysqli_query($connect, $sql);
-  $detail_order = mysqli_fetch_array($donhang);
+
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -30,60 +29,77 @@ if (isset($_GET['order_id'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chi tiết đơn hàng</title>
-  <link rel="stylesheet" href="./order.css">
   <link href="../../../../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
   <link rel="stylesheet" href="../../../css/navbar.css">
-  <link rel="stylesheet" href="./productStyle.css">
+  <link rel="stylesheet" href="../../../css/table.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
+  <link rel="stylesheet" href="order.css">
 </head>
 
 <body>
-<?php
+  <?php
   require "../Nav.php ";
   ?>
-  <div class="grid">
-    <div class="order_detail">
-      <h2>Thông tin đơn hàng</h2>
-      <h2>Mã đơn:
-        <?php echo $detail_order['order_id'] ?>
-      </h2>
-      <h4>Họ và tên:
-        <?php echo $detail_order['customer_fullname'] ?>
-      </h4>
-      <h4>Số điện thoại:
-        <?php echo $detail_order['customer_phone'] ?>
-      </h4>
-      <h4>Địa chỉ:
-        <?php echo $detail_order['customer_address'] ?>
-      </h4>
-      <h4>Tên sản phẩm:
-        <?php echo $detail_order['product_name'] ?>
-      </h4>
-      <h4>Số lượng:
-        <?php echo $detail_order['order_quantity'] ?>
-      </h4>
-      <h4>Đơn giá:
-        <?php echo number_format($detail_order['product_price']) . 'đ' ?>
-      </h4>
-      <h4>Thành tiền:
-        <?php echo number_format($detail_order['product_price'] * $detail_order['order_quantity']) . 'đ' ?>
-      </h4>
-      <h4>Tạo lúc:
-        <?php echo $detail_order['created_at'] ?>
-      </h4>
-      <h4>Cập nhật lúc:
-        <?php echo $detail_order['updated_at'] ?>
-      </h4>
-    </div>
-    <div class="image">
-      <h4 style="display:inline;">Hình ảnh: </h4>
-      <img
-          src="../../../img/imgProduct/<?php echo $detail_order['product_image'] ?>" alt="">
-    </div>
+  <div>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Tên sản phẩm</th>
+          <th scope="col">Hình ảnh</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Đơn giá</th>
+          <th scope="col">Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $tong_tien = 0;
+        while ($detail_order = mysqli_fetch_array($donhang)) {
+          $tong_tien += $detail_order['product_price'] * $detail_order['order_quantity'];
+          ?>
+
+          <tr class="text-center">
+            <td>
+              <?php echo $detail_order['product_name'] ?>
+            </td>
+            <td>
+              <img src="../../../img/imgProduct/<?php echo $detail_order['product_image'] ?>" alt="" srcset="">
+            </td>
+            <td>
+              <?php echo $detail_order['order_quantity'] ?>
+            </td>
+            <td>
+              <?php echo number_format($detail_order['product_price']) . ' đ'; ?>
+            </td>
+            <td>
+              <?php echo number_format($detail_order['product_price'] * $detail_order['order_quantity']) . ' đ' ?>
+            </td>
+            <?php
+        }
+        ?>
+        <tr>
+          <td colspan=4 >Tổng tiền</td>
+          <td>
+            <?php echo number_format($tong_tien) . ' đ' ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <script type="text/javascript" src="../../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+
 </body>
+<script type="text/javascript">
+  function ConfirmUpdate() {
+    let choice = confirm("Bạn có muốn duyệt đơn này");
+    if (choice == true) {
+      return 1;
+    }
+    else
+      return 0;
+  }
+</script>
 
 </html>
 <?php

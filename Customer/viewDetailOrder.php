@@ -11,18 +11,17 @@ $id_user = $user['customer_id'];
 if (isset($_GET['order_id'])) {
     $order_id = $_GET['order_id'];
     $sql = "SELECT 
-  order_id,product_name,customer_phone,receiver_name,receiver_phonenumber,receiver_address,product_price,order_p.order_quantity,product_image,order_status_customer,order_p.created_at,order_p.updated_at
-  FROM order_p inner join product on order_p.product_id=product.product_id 
-  inner join customer on order_p.customer_id = customer.customer_id 
-  WHERE order_id = '$order_id'";
+  * From detail_order
+  INNER JOIN product ON detail_order.product_id = product.product_id
+  WHERE detail_order.order_id = '$order_id'";
     $donhang = mysqli_query($connect, $sql);
-    $detail_order = mysqli_fetch_array($donhang);
+
 }
 
 if (isset($_GET['huydon'])) {
     $huydon = $_GET['huydon'];
-    mysqli_query($connect, "UPDATE order_p SET order_status_customer = 0 WHERE customer_id='$id_user' AND order_id='$huydon'");
-    header('location:ViewOrder.php');
+    mysqli_query($connect, "UPDATE order_p SET order_status= 4 WHERE customer_id='$id_user' AND order_id='$huydon' AND order_status=0");
+    header('location:viewListOrder.php');
 }
 ?>
 <!DOCTYPE html>
@@ -53,43 +52,48 @@ if (isset($_GET['huydon'])) {
         </ul>
         <div class="view-info">
             <div class="order_detail">
-                <h2>Thông tin đơn hàng</h2>
-                <h2>Mã đơn:
-                    <?php echo $detail_order['order_id'] ?>
-                </h2>
-                <h4>Họ và tên người nhận:
-                    <?php echo $detail_order['receiver_name'] ?>
-                </h4>
-                <h4>Số điện thoại người nhận:
-                    <?php echo $detail_order['receiver_phonenumber'] ?>
-                </h4>
-                <h4>Địa chỉ người nhận:
-                    <?php echo $detail_order['receiver_address'] ?>
-                </h4>
-                <h4>Tên sản phẩm:
-                    <?php echo $detail_order['product_name'] ?>
-                </h4>
-                <h4>Số lượng:
-                    <?php echo $detail_order['order_quantity'] ?>
-                </h4>
-                <h4>Đơn giá:
-                    <?php echo number_format($detail_order['product_price']) . 'đ' ?>
-                </h4>
-                <h4>Thành tiền:
-                    <?php echo number_format($detail_order['product_price'] * $detail_order['order_quantity']) . 'đ' ?>
-                </h4>
-                <h4>Tạo lúc:
-                    <?php echo $detail_order['created_at'] ?>
-                </h4>
-                <h4>Cập nhật lúc:
-                    <?php echo $detail_order['updated_at'] ?>
-                </h4>
-                <a href="?huydon=<?php echo $order_id ?>" onclick="if(confirmM()==0)return false;" class="NO">Huỷ
-                    đơn</a>
-            </div>
-            <div class="image">
-                <h4>Hình ảnh: </h4><img src="../Admin/img/imgProduct/<?php echo $detail_order['product_image'] ?>"
-                    alt="">
+                <table>
+                    <tr>
+                        <td>Tên sản phẩm</td>
+                        <td>Hình ảnh</td>
+                        <td>Đơn giá</td>
+                        <td>Số lượng</td>
+                        <td>Thành tiền</td>
+                    </tr>
+                    <?php
+                    $tong_tien = 0;
+                    while ($detail_order = mysqli_fetch_array($donhang)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <?php echo $detail_order['product_name'] ?>
+                            </td>
+                            <td><img src="../Admin/img/imgProduct/<?php echo $detail_order['product_image'] ?>"></img></td>
+                            <td>
+                                <?php echo number_format($detail_order['product_price']) ?>
+                            </td>
+                            <td>
+                                <?php echo $detail_order['order_quantity'] ?>
+                            </td>
+                            <td>
+                                <?php echo number_format((int) $detail_order['order_quantity'] * (int) $detail_order['product_price']) ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+                <?php
+                $dieukien = mysqli_query($connect, "SELECT * from order_p WHERE customer_id='$id_user' AND order_id='$order_id' AND order_status=0");
+                $row = mysqli_num_rows($dieukien);
+                if ($row != 0) {
+                    ?>
+                    <a href="?huydon=<?php echo $order_id ?>" onclick="if(confirmM()==0)return false;" class="NO">Huỷ
+                        đơn</a>
+                    <?php
+                }
+                ?>
+
             </div>
         </div>
     </div>

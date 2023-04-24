@@ -118,7 +118,6 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
             ?>
         </div>
     </div>
-
     <?php
     require './php/footer.php'; // import header va nav vao trang chu
     ?>

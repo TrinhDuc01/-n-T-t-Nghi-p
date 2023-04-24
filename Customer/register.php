@@ -6,7 +6,7 @@ $error['confirm_password'] = '';
 
 //chuc nang dang ky
 if (isset($_POST['register'])) {
-    $username = $_POST['username'];
+    $email = $_POST['email_name'];
     $fullname = $_POST['fullname'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
@@ -15,7 +15,7 @@ if (isset($_POST['register'])) {
     $created_at = date('Y-m-d H:i:s');
     $updated_at = NULL;
 
-    $rows = mysqli_query($connect, "SELECT * FROM customer WHERE customer_name = '$username'");
+    $rows = mysqli_query($connect, "SELECT * FROM customer WHERE customer_email = '$email'");
     $count = mysqli_num_rows($rows);
     if ($password != $confirm_password) {
         $error['confirm_password'] = 'Mật khẩu xác nhận không chính xác!';
@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
             $error['username'] = 'Tên tài khoản đã tồn tại!';
         } else {
             $pass = md5($password);
-            $sql = mysqli_query($connect, "INSERT INTO customer(customer_name, customer_fullname, customer_password, customer_phone, customer_address,created_at,updated_at) VALUES ('$username','$fullname','$pass','$phone','$address','$created_at','$updated_at')");
+            $sql = mysqli_query($connect, "INSERT INTO customer(customer_email, customer_fullname, customer_password, customer_phone, customer_address,created_at,updated_at) VALUES ('$email','$fullname','$pass','$phone','$address','$created_at','$updated_at')");
             header("location:login.php");
 
         }
@@ -55,7 +55,7 @@ if (isset($_POST['register'])) {
             <h1><a href="../index.php"><i class="fa-solid fa-house-chimney"></i></a> Đăng kí</h1>
             <form action="" method="post">
                 <div class="form-control">
-                    <input type="email" name="username" required id="" placeholder="Email">
+                    <input type="email" name="email_name" required id="" placeholder="Email">
                     <span></span>
                     <div class="error">
                         <?php echo $error['username'] ?>
@@ -74,7 +74,8 @@ if (isset($_POST['register'])) {
                     <div></div>
                 </div>
                 <div class="form-control">
-                    <input  class="password" type="password" name="confirm_password" required id="" placeholder="Confirm Password">
+                    <input class="password" type="password" name="confirm_password" required id=""
+                        placeholder="Confirm Password">
                     <button type="button" class="showHide" onclick="showHidePass(1)"><i
                             class="fa-solid fa-eye-slash"></i></button>
                     <span></span>

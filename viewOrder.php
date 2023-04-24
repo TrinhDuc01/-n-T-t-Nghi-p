@@ -21,6 +21,9 @@ if (isset($_GET['idxoa'])) {
     $id = $_GET['idxoa'];
     unset($_SESSION['cart'][$id_customer][$id]);
 }
+if (!isset($_SESSION['cart'][$id_customer])) {
+    header('location:index.php');
+}
 
 $phong = mysqli_query($connect, "SELECT*FROM room");
 ?>

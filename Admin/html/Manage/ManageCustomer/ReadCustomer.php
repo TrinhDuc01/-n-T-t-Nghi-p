@@ -30,6 +30,32 @@ if (isset($_POST['logout'])) {
   <?php
   require "../Nav.php ";
   ?>
+  <?php // phan trang
+  $queryRows = mysqli_query($connect, "SELECT * FROM `customer`");
+  $totalRows = mysqli_num_rows($queryRows);
+  $pageSize = 12; // số dòng tối đa trong 1 trang
+  $totalPage = 1; // tính  tổng số trang
+  
+  // print_r($tencot);
+  
+  if ($totalRows % $pageSize == 0) {
+    $totalPage = $totalRows / $pageSize;
+  } else {
+    $totalPage = (int) ($totalRows / $pageSize) + 1;
+  }
+
+  $rowStart = 1;
+  $pageCurrent = 1;
+
+  if ((!isset($_GET['page'])) || ($_GET['page'] == 1)) {
+    $rowStart = 0;
+    $pageCurrent = 1;
+  } else {
+    $rowStart = ($_GET['page'] - 1) * $pageSize;
+    $pageCurrent = $_GET['page'];
+  }
+
+  ?>
   <div>
     <table class="table table-bordered table-hover">
       <thead>
@@ -38,12 +64,11 @@ if (isset($_POST['logout'])) {
           <th scope="col">Họ và tên</th>
           <th scope="col">Số điện thoại</th>
           <th scope="col">Địa chỉ</th>
-          <th scope="col">Thông tin đặt hàng</th>
         </tr>
       </thead>
       <tbody>
         <?php
-        $sqlkh = mysqli_query($connect, "SELECT * FROM customer");
+        $sqlkh = mysqli_query($connect, "SELECT * FROM customer LIMIT {$rowStart} , {$pageSize}");
         $stt = 0;
         while ($row = mysqli_fetch_array($sqlkh)) {
           $stt++;
@@ -61,17 +86,29 @@ if (isset($_POST['logout'])) {
             <td>
               <?php echo $row['customer_address'] ?>
             </td>
-            <td><a
-                style="background-color: lightblue;color: black; text-decoration:none; border-radius:5px; padding: 5px 10px;"
-                href="./ViewCustomer.php?id=<?php echo $row['customer_id'] ?>">Xem chi tiết</a></td>
-          </tr>
-          <?php
+            <?php
         }
         ?>
       </tbody>
     </table>
   </div>
-
+  <div style="margin:0 0 50px 50px">
+        Trang:
+        <?php echo isset($_REQUEST['page']) ? $_REQUEST['page'] : 1 ?>
+        <div class="pagination">
+            <?php
+            for ($i = 1; $i <= $totalPage; $i++) {
+                if ($pageCurrent == $i) {
+                    echo "<a>" . $i . "</a>";
+                } else {
+                    ?>
+                    <a href="?page=<?php echo $i; ?>"><?php echo $i . ' '; ?></a>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </div>
 </body>
 
 </html>
