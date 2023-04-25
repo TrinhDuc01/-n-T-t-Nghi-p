@@ -75,6 +75,7 @@ if (isset($_GET['duyet_id'])) {
           <th scope="col">Duyệt</th>
           <th scope="col">Chi tiết</th>
           <th scope="col">Ngày đặt</th>
+          <th scope="col">In hoá đơn</th>
         </tr>
       </thead>
       <tbody>

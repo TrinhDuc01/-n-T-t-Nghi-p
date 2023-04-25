@@ -85,7 +85,7 @@ if (isset($_POST['add_product'])) {
   require "../Nav.php ";
   ?>
   <form method="post" enctype="multipart/form-data" class="form_product">
-    <p class="title-manage">Sửa sản phẩm</p>
+    <p class="title-manage">Thêm sản phẩm</p>
     <label for="product_name" class="form-label">Tên sản phẩm</label>
     <input required type="text" name="product_name" id="product_name" class="form-control" placeholder="Nhập...">
 
