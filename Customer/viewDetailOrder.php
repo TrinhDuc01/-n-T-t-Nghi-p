@@ -34,7 +34,10 @@ if (isset($_GET['huydon'])) {
 
     <link rel="stylesheet" type="text/css" href="./css/style_user.css">
     <link rel="stylesheet" type="text/css" href="./css/detailOrder.css">
+    <link rel="stylesheet" type="text/css" href="./css/table.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
+    
 </head>
 
 <body>

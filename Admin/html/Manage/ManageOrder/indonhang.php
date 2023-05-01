@@ -18,10 +18,12 @@ else{
 }
 
 $pdf = new tFPDF();
+
 $pdf->AddPage("0");
 // Add a Unicode font (uses UTF-8)
 $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
 $pdf->SetFont('DejaVu','',14);
+$pdf->SetTitle('Đơn hàng mã: '.$order_id,true);
 $pdf->Write(10, 'Mã đơn hàng: '.$order_id);
 $pdf->Ln(10);
 $pdf->Write(10, 'Tên người nhận hàng: '.$inttkhachhang['receiver_name']);

@@ -3,3 +3,27 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.NO{
+    background-color: red;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.YES{
+    background-color: #30bff8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+}
+
+.SUCCESS{
+    background-color: #30f869;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+}

@@ -19,8 +19,10 @@ $id_user = $user['customer_id'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Thông tin đặt hàng</title>
     <link rel="stylesheet" type="text/css" href="./css/style_user.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../Admin/css/pagination.css">
+    <link rel="stylesheet" href="./css/table.css">
 </head>
 
 <body>
@@ -98,9 +100,9 @@ $id_user = $user['customer_id'];
                             if ($row['order_status'] == 0) {
                                 echo '<button class="NO">Chưa duyệt</button>';
                             } else if ($row['order_status'] == 1) {
-                                echo '<button class="NO">Đã duyệt</button>';
+                                echo '<button class="YES">Đã duyệt</button>';
                             } else if ($row['order_status'] == 2) {
-                                echo '<button class="NO">Đang giao</button>';
+                                echo '<button class="SUCCESS">Đang giao</button>';
                             } else
                                 echo '<button class="NO">Bạn đã huỷ đơn</button>';
                             ?>
@@ -109,7 +111,7 @@ $id_user = $user['customer_id'];
                             <?php echo $row['created_at'] ?>
                         </td>
                         <td>
-                            <a href="./ViewDetailOrder.php?<?php echo 'order_id=' . $row['order_id']; ?>" class="detail">
+                            <a style="color: blue;" href="./ViewDetailOrder.php?<?php echo 'order_id=' . $row['order_id']; ?>" class="detail">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td>

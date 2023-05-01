@@ -89,11 +89,10 @@ input{
 }
 
 .showHide{
-    right: 10px;
     background-color: white;
     border: none;
     position: relative;
-    right: 20px;
+    right: 22px;
 }
 .showHide > i{
     transform: scale(130%);
