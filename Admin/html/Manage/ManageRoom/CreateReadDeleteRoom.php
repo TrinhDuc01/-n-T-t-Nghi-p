@@ -53,7 +53,7 @@ $stt = 0;
       <p class="title-manage">Danh sách Phòng</p>
       <?php
       require "../paginationListTable.php";
-      pagination_List_Table('room','room_id', 10, ['STT', 'Tên phòng', 'Thao tác'], ['room_name'], 'UpdateRoom');
+      pagination_List_Table('room','room_id', 10, ['STT', 'Tên phòng', 'Thao tác'], ['room_name'], 'UpdateRoom','product_category');
       ?>
     </div>
 

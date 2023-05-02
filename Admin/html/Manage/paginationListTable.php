@@ -1,6 +1,6 @@
 <?php
 
-function pagination_List_Table($tenbang, $ma, $sodong, $tencot, $tenthuoctinh,$duongdan)
+function pagination_List_Table($tenbang, $ma, $sodong, $tencot, $tenthuoctinh, $duongdan,$bangphu)
 {
     $username = "root"; // Khai báo username
     $password = ""; // Khai báo password
@@ -57,17 +57,26 @@ function pagination_List_Table($tenbang, $ma, $sodong, $tencot, $tenthuoctinh,$d
                     </th>
                     <?php
                     foreach ($tenthuoctinh as $key => $value) {
-                        echo "<td>".$row[$value]."</td>";
+                        echo "<td>" . $row[$value] . "</td>";
                     }
                     ?>
                     <td>
                         <a href="<?php echo $duongdan ?>.php?<?php echo 'id=' . $row[$ma]; ?>" class="btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'id=' . $row[$ma]; ?>"
-                            class="btn-danger">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
+                        <?php
+                        $result = mysqli_query($connect, "SELECT *From $bangphu Where $ma = {$row[$ma]}");
+                        $numrows = mysqli_num_rows($result);
+                        if ($numrows == 0) {
+                            ?>
+                            <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'id=' . $row[$ma]; ?>"
+                                class="btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                            <?php
+                        }
+                        ?>
+
                     </td>
                 </tr>
                 <?php
@@ -75,7 +84,8 @@ function pagination_List_Table($tenbang, $ma, $sodong, $tencot, $tenthuoctinh,$d
             ?>
         </tbody>
     </table>
-    Trang: <?php echo isset($_REQUEST['page'])? $_REQUEST['page']: 1?>
+    Trang:
+    <?php echo isset($_REQUEST['page']) ? $_REQUEST['page'] : 1 ?>
     <div class="pagination">
         <?php
         for ($i = 1; $i <= $totalPage; $i++) {

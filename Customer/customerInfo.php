@@ -23,53 +23,53 @@ $show = mysqli_fetch_array($layuser);
 </head>
 
 <body>
-		<div class="header">
-			<a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-				<?php echo $user['customer_fullname']; ?>
-			</a>
+	<div class="header">
+		<a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
+			<?php echo $user['customer_fullname']; ?>
+		</a>
+	</div>
+	<div class="container-f">
+		<ul>
+			<li><a href="./customerInfo.php">Thông tin</a></li>
+			<li><a href="./viewListOrder.php">Đơn hàng</a></li>
+			<li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
+			<li><a href="./changeInfo.php">Đổi thông tin</a></li>
+		</ul>
+		<div class="view-info">
+			<table>
+				<tr>
+					<td>Tên đăng nhập</td>
+					<td>
+						<?php echo $show['customer_email'] ?>
+					</td>
+				</tr>
+				<tr>
+					<td>Họ và tên</td>
+					<td>
+						<?php echo $show['customer_fullname'] ?>
+					</td>
+				</tr>
+				<tr>
+					<td>Số điện thoại</td>
+					<td>
+						<?php echo $show['customer_phone'] ?>
+					</td>
+				</tr>
+				<tr>
+					<td>Địa chỉ</td>
+					<td>
+						<?php echo $show['customer_address'] ?>
+					</td>
+				</tr>
+				<tr>
+					<td>Ngày tạo</td>
+					<td>
+						<?php echo $show['created_at'] ?>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class="container-f">
-			<ul>
-				<li><a href="./customerInfo.php">Thông tin</a></li>
-				<li><a href="./viewListOrder.php">Đơn hàng</a></li>
-				<li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
-				<li><a href="./changeInfo.php">Đổi thông tin</a></li>
-			</ul>
-			<div class="view-info">
-				<table>
-					<tr>
-						<td>Tên đăng nhập</td>
-						<td>
-							<?php echo $show['customer_email'] ?>
-						</td>
-					</tr>
-					<tr>
-						<td>Họ và tên</td>
-						<td>
-							<?php echo $show['customer_fullname'] ?>
-						</td>
-					</tr>
-					<tr>
-						<td>Số điện thoại</td>
-						<td>
-							<?php echo $show['customer_phone'] ?>
-						</td>
-					</tr>
-					<tr>
-						<td>Địa chỉ</td>
-						<td>
-							<?php echo $show['customer_address'] ?>
-						</td>
-					</tr>
-					<tr>
-						<td>Ngày tạo</td>
-						<td>
-							<?php echo $show['created_at'] ?>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
+	</div>
 </body>
 
 </html>

@@ -111,7 +111,8 @@ $id_user = $user['customer_id'];
                             <?php echo $row['created_at'] ?>
                         </td>
                         <td>
-                            <a style="color: blue;" href="./ViewDetailOrder.php?<?php echo 'order_id=' . $row['order_id']; ?>" class="detail">
+                            <a style="color: blue;"
+                                href="./ViewDetailOrder.php?<?php echo 'order_id=' . $row['order_id']; ?>" class="detail">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td>

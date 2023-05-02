@@ -53,7 +53,7 @@ $stt = 0;
       <p class="title-manage">Danh sách vật liệu</p>
       <?php
       require "../paginationListTable.php";
-      pagination_List_Table('material', 'material_id', 10, ['STT', 'Tên vật liệu', 'Thao tác'], ['material_name'], 'UpdateMaterial');
+      pagination_List_Table('material', 'material_id', 10, ['STT', 'Tên vật liệu', 'Thao tác'], ['material_name'], 'UpdateMaterial','product');
       ?>
     </div>
     <form method="post">

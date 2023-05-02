@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 require "../../../../connect.php";
 if (!isset($_SESSION['admin_login'])) {
   header("location:../../LoginAdmin.php");
@@ -58,7 +59,7 @@ $stt = 0;
     <p class="title-manage">Danh sách danh mục sản phẩm</p>
       <?php
       require "../paginationListTable.php";
-      pagination_List_Table('product_category','category_id', 10, ['STT', 'Tên danh mục', 'Thao tác'], ['category_name'],'UpdateCategory');
+      pagination_List_Table('product_category','category_id', 10, ['STT', 'Tên danh mục', 'Thao tác'], ['category_name'],'UpdateCategory','product');
       ?>
     </div>
     <form method="post">

@@ -54,7 +54,7 @@ if (isset($_POST['changepass'])) {
     </div>
     <div class="container-f">
         <ul>
-            <li><a href="./customerInfo.php">Thông tin</a></li>
+        <li><a href="./customerInfo.php">Thông tin</a></li>
             <li><a href="./viewListOrder.php">Đơn hàng</a></li>
             <li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
             <li><a href="./changeInfo.php">Đổi thông tin</a></li>

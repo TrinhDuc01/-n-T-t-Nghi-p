@@ -37,7 +37,7 @@ if (isset($_GET['huydon'])) {
     <link rel="stylesheet" type="text/css" href="./css/table.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="../icon/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -48,7 +48,7 @@ if (isset($_GET['huydon'])) {
     </div>
     <div class="container-f">
         <ul>
-            <li><a href="./customerInfor.php">Thông tin</a></li>
+            <li><a href="./customerInfo.php">Thông tin</a></li>
             <li><a href="./viewListOrder.php">Đơn hàng</a></li>
             <li><a href="./changePasswordUser.php">Đổi mật khẩu</a></li>
             <li><a href="./changeInfo.php">Đổi thông tin</a></li>

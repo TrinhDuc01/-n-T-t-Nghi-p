@@ -49,7 +49,8 @@ if (isset($_POST['login'])) {
                 </div>
                 <div class="form-control">
                     <input class="password" type="password" required name="password" id="" placeholder="Mật khẩu">
-                    <button type="button" class="showHide" onclick="showHidePass(0)"><i class="fa-solid fa-eye-slash"></i></button>
+                    <button type="button" class="showHide" onclick="showHidePass(0)"><i
+                            class="fa-solid fa-eye-slash"></i></button>
                     <span></span>
                     <div class="error">
                         <?php echo $error['account']; ?>
@@ -58,6 +59,7 @@ if (isset($_POST['login'])) {
                 <button type="submit" name="login" class="btn-submit">Đăng nhập</button>
             </form>
             <div class="link">
+
                 Chưa có tài khoản? <a href="./register.php">Đăng kí</a>
             </div>
         </div>
