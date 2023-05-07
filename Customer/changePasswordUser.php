@@ -13,13 +13,14 @@ $success = '';
 $id = $user['customer_id'];
 
 if (isset($_POST['changepass'])) {
+    $email = $_SESSION['login']['customer_email'];
     $oldpass = $_POST['oldpass'];
     $newpass = $_POST['newpass'];
     $confirmpass = $_POST['confirmpass'];
     $pass1 = md5($newpass);
     $pass2 = md5($oldpass);
     $updated_at = date('Y-m-d H:i:s');
-    $sql = mysqli_query($connect, "SELECT * FROM customer WHERE customer_password = '$pass2'");
+    $sql = mysqli_query($connect, "SELECT * FROM customer WHERE customer_password = '$pass2' AND customer_email='$email'");
     $row = mysqli_num_rows($sql);
     if ($row == 1) {
         if ($confirmpass != $newpass) {
@@ -33,7 +34,8 @@ if (isset($_POST['changepass'])) {
     }
 }
 
-
+$layuser = mysqli_query($connect, "SELECT * FROM customer WHERE customer_id = '$id'");
+$show = mysqli_fetch_array($layuser);
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +51,7 @@ if (isset($_POST['changepass'])) {
 <body>
     <div class="header">
         <a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-            <?php echo $user['customer_fullname']; ?>
+            <?php echo $show['customer_fullname']; ?>
         </a>
     </div>
     <div class="container-f">

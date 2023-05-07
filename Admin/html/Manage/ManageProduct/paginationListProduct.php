@@ -6,7 +6,7 @@ function shorter($text, $chars_limit)
     else
         return $text;
 }
-function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhnoi, $ma, $sodong, $tencot, $tenthuoctinh, $duongdan)
+function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhnoi, $ma, $sodong, $tencot, $tenthuoctinh, $duongdan,$bangphu)
 {
     $username = "root"; // Khai báo username
     $password = ""; // Khai báo password
@@ -71,7 +71,7 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
                     <?php
                     foreach ($tenthuoctinh as $key => $value) {
                         if ($value == 'product_image') {
-                            echo "<td><img src="."../../../img/imgProduct/{$row[$value]}"."></td>";
+                            echo "<td><img src=" . "../../../img/imgProduct/{$row[$value]}" . "></td>";
                         } else {
                             echo "<td>" . shorter($row[$value], 50) . "</td>";
                         }
@@ -82,10 +82,18 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
                         <a href="<?php echo $duongdan ?>.php?<?php echo 'edit_id=' . $row[$ma]; ?>" class="btn-primary">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'delete_id=' . $row[$ma]; ?>"
-                            class="btn-danger">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
+                        <?php
+                        $result = mysqli_query($connect, "SELECT *From $bangphu Where $ma = {$row[$ma]}");
+                        $numrows = mysqli_num_rows($result);
+                        if ($numrows == 0) {
+                            ?>
+                            <a onclick="if(ConfirmDelete()==0) return false" href="?<?php echo 'delete_id=' . $row[$ma]; ?>"
+                                class="btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                            <?php
+                        }
+                        ?>
                     </td>
                 </tr>
                 <?php
@@ -93,7 +101,8 @@ function pagination_List_Table($tenbang, $danhsachbangnoi, $thuoctinhkhoachinhno
             ?>
         </tbody>
     </table>
-    Trang: <?php echo isset($_REQUEST['page'])? $_REQUEST['page']: 1?>
+    Trang:
+    <?php echo isset($_REQUEST['page']) ? $_REQUEST['page'] : 1 ?>
     <div class="pagination">
         <?php
         for ($i = 1; $i <= $totalPage; $i++) {

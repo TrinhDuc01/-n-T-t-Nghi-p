@@ -115,7 +115,7 @@ a{
     cursor: pointer;
     text-decoration: underline var(--success-color);
 }
-
+    
 .error{
     color: var(--error-color);
     width: 100%;

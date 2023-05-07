@@ -10,6 +10,10 @@ if (isset($_POST['logout'])) {
   unset($_SESSION['admin_login']);
   header("location:../../LoginAdmin.php");
 }
+$error['product_quantity'] = '';
+$error['product_price'] = '';
+$error['product_image'] = '';
+$error['product_images'] = "";
 
 if (isset($_GET['edit_id'])) {
   $id = $_GET['edit_id'];
@@ -34,6 +38,16 @@ if (isset($_POST['edit_product'])) {
   $category_id = $_POST['category_id'];
   // print_r($_FILES['product_image']);
   // die();
+  if (!is_numeric($product_quantity)) {
+    $error['product_quantity'] = 'Số lượng sản phẩm phải là số!';
+  } else {
+    $error['product_quantity'] = '';
+  }
+  if (!is_numeric($product_price)) {
+    $error['product_price'] = 'Giá sản phẩm phải là số!';
+  } else {
+    $error['product_price'] = '';
+  }
   //kiểm tra ảnh
   if (isset($_FILES['product_image'])) {
     $file = $_FILES['product_image'];
@@ -57,7 +71,7 @@ if (isset($_POST['edit_product'])) {
   $updated_at = date('Y-m-d H:i:s');
 
   //Sửa nhiều ảnh
-  if (isset($_FILES['product_images'])) {
+  if (isset($_FILES['product_images']) && empty($error['product_price']) && empty($error['product_quantity'])) {
     $files = $_FILES['product_images'];
     $image_urls = $files['name'];
 
@@ -70,15 +84,19 @@ if (isset($_POST['edit_product'])) {
         }
       }
     }
+    //Sửa sản phẩm
 
   }
-  //Sửa sản phẩm
+
+  if (empty($error['product_price']) && empty($error['product_quantity'])) {
     $sqlUpdate = "UPDATE product SET product_name='$product_name', product_price='$product_price', product_description='$product_description', product_quantity='$product_quantity', product_size='$product_size', product_image='$product_image', material_id='$material_id', category_id='$category_id',updated_at='$updated_at' WHERE product_id = '$id'";
     $query = mysqli_query($connect, $sqlUpdate);
-    if($query){
+    if ($query) {
       echo 'ok';
       header('location:CreateReadDeleteProduct.php');
     }
+  }
+
 }
 ?>
 <!DOCTYPE html>
@@ -109,9 +127,9 @@ if (isset($_POST['edit_product'])) {
     </div>
 
     <label for="product_price" class="form-label">Giá sản phẩm</label>
-    <input required type="text" value="<?php echo $print_value['product_price'] ?>" name="product_price" id="product_price"
-      class="form-control" placeholder="Nhập...">
-    <div class="text-danger">
+    <input required type="text" value="<?php echo $print_value['product_price'] ?>" name="product_price"
+      id="product_price" class="form-control" placeholder="Nhập...">
+    <div class="text-danger" style="color:red">
       <?php echo isset($error['product_price']) ? $error['product_price'] : ''; ?>
     </div>
 
@@ -125,7 +143,7 @@ if (isset($_POST['edit_product'])) {
     <label for="product_quantity" class="form-label">Số lượng sản phẩm</label>
     <input required type="text" value="<?php echo $print_value['product_quantity'] ?>" name="product_quantity"
       id="product_quantity" class="form-control" placeholder="Nhập...">
-    <div class="text-danger">
+    <div class="text-danger" style="color:red">
       <?php echo isset($error['product_quantity']) ? $error['product_quantity'] : ''; ?>
     </div>
 
@@ -145,51 +163,51 @@ if (isset($_POST['edit_product'])) {
     <label for="product_images" class="form-label">Ảnh mô tả sản phẩm</label>
     <inputtype="file" name="product_images[]" id="product_images" class="form-control" multiple="mutiple"
       placeholder="Nhập...">
-    <div class="text-danger">
-      <?php echo isset($error['product_images']) ? $error['product_images'] : ''; ?>
-    </div>
+      <div class="text-danger">
+        <?php echo isset($error['product_images']) ? $error['product_images'] : ''; ?>
+      </div>
 
-    <div class="image-desc">
-      <?php
-      foreach ($query_img_mota as $key => $value) {
-        ?>
-        <img style="max-width: 250px;" class="thumbnail"
-          src="<?php echo '../../../img/imgProduct/' . $value['image_url']; ?>">
+      <div class="image-desc">
         <?php
-      }
-      ?>
-    </div>
-    
-    <label>Sản phẩm làm từ</label>
-    <select class="form-select" name="material_id" id="material_id" aria-label="Default select example">
-      <?php
-      $query1 = mysqli_query($connect, "SELECT * FROM material");
-      while ($row = mysqli_fetch_array($query1)) {
+        foreach ($query_img_mota as $key => $value) {
+          ?>
+          <img style="max-width: 250px;" class="thumbnail"
+            src="<?php echo '../../../img/imgProduct/' . $value['image_url']; ?>">
+          <?php
+        }
         ?>
-        <option value="<?php echo $row['material_id'] ?>" <?php echo (($row['material_id'] == $print_value['material_id']) ? 'selected' : ''); ?>><?php echo $row['material_name'] ?>
-        </option>
-        <?php
-      }
-      ?>
-    </select>
+      </div>
 
-    <label for="category_id" class="form-label">Sản phẩm thuộc danh mục</label>
-    <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
-      <?php
-      $query2 = mysqli_query($connect, "SELECT * FROM product_category");
-      while ($row = mysqli_fetch_array($query2)) {
+      <label>Sản phẩm làm từ</label>
+      <select class="form-select" name="material_id" id="material_id" aria-label="Default select example">
+        <?php
+        $query1 = mysqli_query($connect, "SELECT * FROM material");
+        while ($row = mysqli_fetch_array($query1)) {
+          ?>
+          <option value="<?php echo $row['material_id'] ?>" <?php echo (($row['material_id'] == $print_value['material_id']) ? 'selected' : ''); ?>><?php echo $row['material_name'] ?>
+          </option>
+          <?php
+        }
         ?>
-        <option value="<?php echo $row['category_id'] ?>" <?php echo (($row['category_id'] == $print_value['category_id']) ? 'selected' : ''); ?>><?php echo $row['category_name'] ?>
-        </option>
+      </select>
+
+      <label for="category_id" class="form-label">Sản phẩm thuộc danh mục</label>
+      <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
         <?php
-      }
-      ?>
-    </select>
+        $query2 = mysqli_query($connect, "SELECT * FROM product_category");
+        while ($row = mysqli_fetch_array($query2)) {
+          ?>
+          <option value="<?php echo $row['category_id'] ?>" <?php echo (($row['category_id'] == $print_value['category_id']) ? 'selected' : ''); ?>><?php echo $row['category_name'] ?>
+          </option>
+          <?php
+        }
+        ?>
+      </select>
 
 
-    <div>
-      <button type="submit" name="edit_product" class="success">Sửa</button>
-    </div>
+      <div>
+        <button type="submit" name="edit_product" class="success">Sửa</button>
+      </div>
   </form>
 </body>
 

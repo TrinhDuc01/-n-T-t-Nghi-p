@@ -59,7 +59,7 @@ $stt = 0;
     <form method="post">
       <p class="title-manage">Thêm vật liệu</p>
       <label for="disabledTextInput" class="form-label">Tên vật liệu</label>
-      <input type="text" name="material_name" id="disabledTextInput" class="form-control" placeholder="Nhập...">
+      <input required type="text" name="material_name" id="disabledTextInput" class="form-control" placeholder="Nhập...">
       <div class="text-danger">
         <?php echo isset($error['material_name']) ? $error['material_name'] : ''; ?>
       </div>

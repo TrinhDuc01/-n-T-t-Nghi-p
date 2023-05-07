@@ -50,4 +50,9 @@ select{
 
 input{
     height: 30px;
+    padding: 2px 5px;
+}
+
+#num_error{
+    color: red;
 }

@@ -9,7 +9,8 @@ if (isset($_SESSION['login'])) {
 
 $id_user = $user['customer_id'];
 // print_r($id_user);
-
+$layuser = mysqli_query($connect, "SELECT * FROM customer WHERE customer_id = '$id_user'");
+$show = mysqli_fetch_array($layuser);
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +55,7 @@ $id_user = $user['customer_id'];
     ?>
     <div class="header">
         <a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-            <?php echo $user['customer_fullname']; ?>
+            <?php echo $show['customer_fullname']; ?>
         </a>
     </div>
     <div class="container-f">

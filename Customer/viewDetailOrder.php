@@ -23,6 +23,8 @@ if (isset($_GET['huydon'])) {
     mysqli_query($connect, "UPDATE order_p SET order_status= 4 WHERE customer_id='$id_user' AND order_id='$huydon' AND order_status=0");
     header('location:viewListOrder.php');
 }
+$layuser = mysqli_query($connect, "SELECT * FROM customer WHERE customer_id = '$id_user'");
+$show = mysqli_fetch_array($layuser);
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +45,7 @@ if (isset($_GET['huydon'])) {
 <body>
     <div class="header">
         <a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-            <?php echo $user['customer_fullname']; ?>
+            <?php echo $show['customer_fullname']; ?>
         </a>
     </div>
     <div class="container-f">
@@ -66,6 +68,7 @@ if (isset($_GET['huydon'])) {
                     <?php
                     $tong_tien = 0;
                     while ($detail_order = mysqli_fetch_array($donhang)) {
+                        $tong_tien += $detail_order['product_price'] * $detail_order['order_quantity'];
                         ?>
                         <tr>
                             <td>
@@ -85,6 +88,12 @@ if (isset($_GET['huydon'])) {
                         <?php
                     }
                     ?>
+                    <tr>
+                        <td colspan=4>Tổng tiền</td>
+                        <td>
+                            <?php echo number_format($tong_tien) . ' đ' ?>
+                        </td>
+                    </tr>
                 </table>
                 <?php
                 $dieukien = mysqli_query($connect, "SELECT * from order_p WHERE customer_id='$id_user' AND order_id='$order_id' AND order_status=0");

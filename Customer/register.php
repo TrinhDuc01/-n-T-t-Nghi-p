@@ -3,6 +3,7 @@ session_start();
 require "../connect.php";
 $error['username'] = '';
 $error['confirm_password'] = '';
+$error['phone'] = '';
 
 //chuc nang dang ky
 if (isset($_POST['register'])) {
@@ -19,7 +20,11 @@ if (isset($_POST['register'])) {
     $count = mysqli_num_rows($rows);
     if ($password != $confirm_password) {
         $error['confirm_password'] = 'Mật khẩu xác nhận không chính xác!';
-    } else {
+    } 
+    elseif(!is_numeric($phone)){
+        $error['phone'] = 'Bạn phải nhập số!';
+    }
+    else {
         if ($count == 1) {
             $error['username'] = 'Tên tài khoản đã tồn tại!';
         } else {
@@ -86,7 +91,9 @@ if (isset($_POST['register'])) {
                 <div class="form-control">
                     <input type="text" name="phone" id="" required placeholder="Số điện thoại">
                     <span></span>
-                    <div></div>
+                    <div class="error">
+                        <?php echo $error['phone'] ?>
+                    </div>
                 </div>
                 <div class="form-control">
                     <input type="text" name="address" id="" required placeholder="Địa chỉ">

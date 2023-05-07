@@ -14,6 +14,7 @@ if (isset($_POST['login'])) {
         $info_user = mysqli_fetch_array($rows);
         $_SESSION['login']['customer_fullname'] = $info_user['customer_fullname'];
         $_SESSION['login']['customer_id'] = $info_user['customer_id'];
+        $_SESSION['login']['customer_email'] = $info_user['customer_email'];
         //         echo '<pre>';
 // print_r($_SESSION['login']);
         header('location:../index.php');
@@ -43,7 +44,7 @@ if (isset($_POST['login'])) {
             <h1><a href="../index.php"><i class="fa-solid fa-house-chimney"></i></a> Đăng nhập</h1>
             <form method="post">
                 <div class="form-control">
-                    <input type="email" required name="email" id="" placeholder="Tên đăng nhập">
+                    <input type="email" required name="email" id="" placeholder="Email">
                     <span></span>
                     <div></div>
                 </div>

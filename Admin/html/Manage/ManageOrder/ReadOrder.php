@@ -128,9 +128,12 @@ if (isset($_GET['duyet_id'])) {
               <?php echo $row['created_at']; ?>
             </td>
             <td>
-              <a href="./indonhang.php?<?php echo 'order_id=' . $row['order_id']; ?>" class="btn btn-primary">
-                In đơn hàng
-              </a>
+              <button class="btn btn-primary">
+                <a style="color: white;" href="./indonhang.php?<?php echo 'order_id=' . $row['order_id']; ?>" >
+                  In đơn hàng
+                </a>
+              </button>
+
             </td>
           </tr>
 

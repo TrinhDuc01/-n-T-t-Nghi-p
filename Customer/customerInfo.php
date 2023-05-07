@@ -25,7 +25,7 @@ $show = mysqli_fetch_array($layuser);
 <body>
 	<div class="header">
 		<a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-			<?php echo $user['customer_fullname']; ?>
+			<?php echo $show['customer_fullname']; ?>
 		</a>
 	</div>
 	<div class="container-f">

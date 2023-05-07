@@ -8,20 +8,24 @@ if (isset($_SESSION['login'])) {
 }
 
 $id = $user['customer_id'];
+$error['phone'] = '';
 
-$layuser = mysqli_query($connect, "SELECT * FROM customer WHERE customer_id = '$id'");
-$show = mysqli_fetch_array($layuser);
 $success = '';
 if (isset($_POST['changeinfo'])) {
     $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $updated_at = date('Y-m-d H:i:s');
-    $sql = "UPDATE customer SET customer_fullname = '$fullname', customer_phone = '$phone', customer_address = '$address', updated_at = '$updated_at' WHERE customer_id = '$id'";
-    $query = mysqli_query($connect, $sql);
-    $success = 'Thay đổi thông tin thành công';
+    if (!is_numeric($phone)) {
+        $error['phone'] = 'Số điện thoại phải là số!';
+    } else {
+        $sql = "UPDATE customer SET customer_fullname = '$fullname', customer_phone = '$phone', customer_address = '$address', updated_at = '$updated_at' WHERE customer_id = '$id'";
+        $query = mysqli_query($connect, $sql);
+        $success = 'Thay đổi thông tin thành công';
+    }
 }
-
+$layuser = mysqli_query($connect, "SELECT * FROM customer WHERE customer_id = '$id'");
+$show = mysqli_fetch_array($layuser);
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +41,7 @@ if (isset($_POST['changeinfo'])) {
 <body>
     <div class="header">
         <a href="../index.php"><i class="fa-sharp fa-solid fa-house"></i> Xin Chào
-            <?php echo $user['customer_fullname']; ?>
+            <?php echo $show['customer_fullname']; ?>
         </a>
     </div>
     <div class="container-f">
@@ -51,6 +55,9 @@ if (isset($_POST['changeinfo'])) {
             <form method="post">
                 <div style="color: #18cb4e; text-align: center;">
                     <?php echo $success ?>
+                </div>
+                <div style="color: red; text-align: center;">
+                    <?php echo $error['phone'] ?>
                 </div>
                 <table>
                     <tr>

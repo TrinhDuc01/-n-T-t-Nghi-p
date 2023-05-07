@@ -47,7 +47,7 @@ $stt = 0;
   <p class="title-manage">Danh sách sản phẩm <a class="add" href="CreateProduct.php" class="btn btn-primary"> <i class="fas fa-add"></i>Thêm</a> </p>
   <?php
       require "./paginationListProduct.php";
-      pagination_List_Table('product',['material','product_category'],['material_id','category_id'],'product_id', 5, ['STT', 'Tên sản phẩm','Hình ảnh','Giá','Mô tả','Số lượng','Chất liệu','Danh mục','Thao tác'], ['product_name','product_image','product_price','product_description','product_quantity','material_name','category_name'], 'UpdateProduct');
+      pagination_List_Table('product',['material','product_category'],['material_id','category_id'],'product_id', 5, ['STT', 'Tên sản phẩm','Hình ảnh','Giá','Mô tả','Số lượng','Chất liệu','Danh mục','Thao tác'], ['product_name','product_image','product_price','product_description','product_quantity','material_name','category_name'], 'UpdateProduct','detail_order');
       ?>
       
 </body>

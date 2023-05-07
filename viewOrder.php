@@ -59,7 +59,9 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
                     </tr>
                     <tr>
                         <td>Số điện thoại</td>
-                        <td><input required name="phone_number" type="text"></td>
+                        <td><input id="phone_number" onchange="isNumberic()" required name="phone_number" type="text">
+                            <div id="num_error"></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
@@ -149,3 +151,21 @@ $phong = mysqli_query($connect, "SELECT*FROM room");
 <?php
 mysqli_close($connect);
 ?>
+
+<script>
+    function isNumberic() {
+        const checknum = document.getElementById('phone_number');
+        const num_error = document.getElementById('num_error');
+        const order = document.getElementsByClassName('order')[0];
+        console.log(checknum);
+        if(isNaN(checknum.value)){
+            num_error.innerText = "Mời bạn nhập số";
+            order.setAttribute('disabled','')
+            console.log(order);
+        }
+        else{
+            num_error.innerText = "";
+            order.removeAttribute('disabled')
+        }
+    }
+</script>
