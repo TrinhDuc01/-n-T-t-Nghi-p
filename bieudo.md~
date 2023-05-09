@@ -7179,7 +7179,7 @@
 			quid       	"64466CEB0066")
 		    (object ClassAttribute "receiver_address"
 			quid       	"64466CF40036")
-		    (object ClassAttribute "orderStatus"
+		    (object ClassAttribute "detail_Order"
 			quid       	"6425C70C0016")
 		    (object ClassAttribute "createdAt"
 			quid       	"6425C7360032")
@@ -26831,6 +26831,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"6425B0680084"
+					compartment 	(object Compartment
+					    Parent_View 	@1317
+					    location   	(2729, 557)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	12
+					    max_width  	0
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -29238,6 +29255,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"6425B0680084"
+					compartment 	(object Compartment
+					    Parent_View 	@1455
+					    location   	(2308, 545)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	12
+					    max_width  	0
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -31893,6 +31927,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"642647390344"
+					compartment 	(object Compartment
+					    Parent_View 	@1600
+					    location   	(404, 619)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	5
+					    max_width  	756
+					    justify    	0)
 					width      	230
 					height     	154
 					annotation 	8
@@ -31954,6 +32005,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"6425B0680084"
+					compartment 	(object Compartment
+					    Parent_View 	@1604
+					    location   	(1875, 1234)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	12
+					    max_width  	466
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -31961,7 +32029,7 @@
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
-					location   	(1315, 981)
+					location   	(1390, 975)
 					font       	(object Font
 					    size       	10
 					    face       	"Arial"
@@ -31973,7 +32041,7 @@
 					    default_color 	TRUE)
 					label      	(object ItemLabel
 					    Parent_View 	@1605
-					    location   	(1315, 1137)
+					    location   	(1390, 1131)
 					    anchor_loc 	1
 					    nlines     	2
 					    max_width  	527
@@ -31984,6 +32052,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"6425A4E801FE"
+					compartment 	(object Compartment
+					    Parent_View 	@1605
+					    location   	(1201, 1216)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	17
+					    max_width  	375
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -32014,6 +32099,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"6425B09102B4"
+					compartment 	(object Compartment
+					    Parent_View 	@1606
+					    location   	(2364, 622)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	13
+					    max_width  	462
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -32044,6 +32146,23 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"644669690353"
+					compartment 	(object Compartment
+					    Parent_View 	@1607
+					    location   	(257, 1566)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	7
+					    max_width  	403
+					    justify    	0)
 					height     	154
 					annotation 	8
 					autoResize 	TRUE)
@@ -32051,7 +32170,7 @@
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
-					location   	(1744, 486)
+					location   	(1736, 358)
 					font       	(object Font
 					    size       	10
 					    face       	"Arial"
@@ -32063,7 +32182,7 @@
 					    default_color 	TRUE)
 					label      	(object ItemLabel
 					    Parent_View 	@1608
-					    location   	(1743, 647)
+					    location   	(1735, 519)
 					    anchor_loc 	1
 					    nlines     	2
 					    max_width  	628
@@ -32074,158 +32193,175 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"642647410229"
+					compartment 	(object Compartment
+					    Parent_View 	@1608
+					    location   	(1478, 560)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    anchor     	2
+					    nlines     	4
+					    max_width  	512
+					    justify    	0)
 					width      	158
 					annotation 	8
 					autoResize 	TRUE)
 				    (object AssociationViewNew "$UNNAMED$150" @1609
-					location   	(1290, 451)
+					location   	(1286, 386)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"6426481100DE"
 					roleview_list 	(list RoleViews
 					    (object RoleView "$UNNAMED$151" @1610
 						Parent_View 	@1609
-						location   	(487, 29)
+						location   	(483, -36)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"6426481102B1"
 						client     	@1609
 						supplier   	@1608
 						vertices   	(list Points
-						    (1290, 451)
-						    (1664, 478))
+						    (1286, 386)
+						    (1658, 361))
 						line_style 	0)
 					    (object RoleView "$UNNAMED$152" @1611
 						Parent_View 	@1609
-						location   	(487, 29)
+						location   	(483, -36)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"6426481102B3"
 						client     	@1609
 						supplier   	@1600
 						vertices   	(list Points
-						    (1290, 451)
-						    (915, 426))
+						    (1286, 386)
+						    (915, 411))
 						line_style 	0)))
 				    (object AssociationViewNew "$UNNAMED$153" @1612
-					location   	(2031, 874)
+					location   	(2026, 838)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"6426485601BC"
 					roleview_list 	(list RoleViews
 					    (object RoleView "$UNNAMED$154" @1613
 						Parent_View 	@1612
-						location   	(683, 451)
+						location   	(678, 415)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"6426485700E0"
 						client     	@1612
 						supplier   	@1604
 						vertices   	(list Points
-						    (2031, 874)
-						    (2121, 993))
+						    (2026, 838)
+						    (2075, 917))
 						line_style 	0)
 					    (object RoleView "$UNNAMED$155" @1614
 						Parent_View 	@1612
-						location   	(683, 451)
+						location   	(678, 415)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"6426485700E9"
 						client     	@1612
 						supplier   	@1608
 						vertices   	(list Points
-						    (2031, 874)
-						    (1829, 602))
+						    (2026, 838)
+						    (1978, 759))
 						line_style 	0)))
 				    (object AssociationViewNew "$UNNAMED$174" @1615
-					location   	(1430, 845)
+					location   	(1471, 828)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"642653C7003C"
 					roleview_list 	(list RoleViews
 					    (object RoleView "$UNNAMED$175" @1616
 						Parent_View 	@1615
-						location   	(82, 422)
+						location   	(123, 405)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"642653C70207"
 						client     	@1615
 						supplier   	@1605
 						vertices   	(list Points
-						    (1430, 845)
-						    (1373, 905))
+						    (1471, 828)
+						    (1428, 898))
 						line_style 	0)
 					    (object RoleView "$UNNAMED$176" @1617
 						Parent_View 	@1615
-						location   	(82, 422)
+						location   	(123, 405)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"642653C7021E"
 						client     	@1615
 						supplier   	@1608
 						vertices   	(list Points
-						    (1430, 845)
-						    (1656, 587))
+						    (1471, 828)
+						    (1514, 759))
 						line_style 	0)))
 				    (object AssociationViewNew "$UNNAMED$177" @1618
-					location   	(2175, 429)
+					location   	(2171, 367)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"642653C90156"
 					roleview_list 	(list RoleViews
 					    (object RoleView "$UNNAMED$178" @1619
 						Parent_View 	@1618
-						location   	(827, 6)
+						location   	(823, -56)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"642653C90370"
 						client     	@1618
 						supplier   	@1606
 						vertices   	(list Points
-						    (2175, 429)
-						    (2531, 386))
+						    (2171, 367)
+						    (2530, 377))
 						line_style 	0)
 					    (object RoleView "$UNNAMED$179" @1620
 						Parent_View 	@1618
-						location   	(827, 6)
+						location   	(823, -56)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"642653C9038A"
 						client     	@1618
 						supplier   	@1608
 						vertices   	(list Points
-						    (2175, 429)
-						    (1820, 471))
+						    (2171, 367)
+						    (1812, 358))
 						line_style 	0)))
 				    (object AssociationViewNew "$UNNAMED$354" @1621
-					location   	(1062, 932)
+					location   	(1058, 874)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"64466AF7027A"
 					roleview_list 	(list RoleViews
 					    (object RoleView "$UNNAMED$355" @1622
 						Parent_View 	@1621
-						location   	(-286, 509)
+						location   	(-290, 451)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"64466AF80131"
 						client     	@1621
 						supplier   	@1607
 						vertices   	(list Points
-						    (1062, 932)
-						    (546, 1271))
+						    (1058, 874)
+						    (546, 1264))
 						line_style 	0)
 					    (object RoleView "$UNNAMED$356" @1623
 						Parent_View 	@1621
-						location   	(-286, 509)
+						location   	(-290, 451)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"64466AF80141"
 						client     	@1621
 						supplier   	@1608
 						vertices   	(list Points
-						    (1062, 932)
-						    (1666, 532))
+						    (1058, 874)
+						    (1570, 484))
 						line_style 	0)))))
 			    (object InteractionDiagram "TT Dat hang"
 				mechanism_ref 	@1598
@@ -36867,6 +37003,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -36878,7 +37015,6 @@
 				    line_color 	3342489
 				    quidu      	"64510F1B03DB"
 				    width      	1756
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -37179,6 +37315,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -37190,7 +37327,6 @@
 				    line_color 	3342489
 				    quidu      	"645112660044"
 				    width      	1837
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -37213,7 +37349,7 @@
 				    supplier   	@1833
 				    vertices   	(list Points
 					(2068, 1444)
-					(1543, 1577))
+					(1544, 1577))
 				    line_style 	0
 				    x_offset   	FALSE)
 				(object TransView "" @1837
@@ -37991,6 +38127,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -38002,7 +38139,6 @@
 				    line_color 	3342489
 				    quidu      	"64510F1B03DB"
 				    width      	1756
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -38029,6 +38165,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -38040,7 +38177,6 @@
 				    line_color 	3342489
 				    quidu      	"645112660044"
 				    width      	1837
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -38810,6 +38946,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -38821,7 +38958,6 @@
 				    line_color 	3342489
 				    quidu      	"64510F1B03DB"
 				    width      	1756
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -38848,6 +38984,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -38859,7 +38996,6 @@
 				    line_color 	3342489
 				    quidu      	"645112660044"
 				    width      	1837
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -39629,6 +39765,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -39640,7 +39777,6 @@
 				    line_color 	3342489
 				    quidu      	"64510F1B03DB"
 				    width      	1756
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -39667,6 +39803,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -39678,7 +39815,6 @@
 				    line_color 	3342489
 				    quidu      	"645112660044"
 				    width      	1837
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -41064,6 +41200,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -41075,7 +41212,6 @@
 				    line_color 	3342489
 				    quidu      	"6451258B02F3"
 				    width      	1750
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -41146,6 +41282,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -41157,7 +41294,6 @@
 				    line_color 	3342489
 				    quidu      	"645125F202EC"
 				    width      	1757
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -41900,6 +42036,7 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
+					hidden     	TRUE
 					nlines     	2
 					max_width  	300
 					justify    	1
@@ -41911,7 +42048,6 @@
 				    line_color 	3342489
 				    quidu      	"64512D700296"
 				    width      	1181
-				    height     	19
 				    autoResize 	TRUE
 				    sync_flow_direction 	1
 				    sync_is_horizontal 	TRUE)
@@ -41923,7 +42059,7 @@
 				    supplier   	@2108
 				    vertices   	(list Points
 					(877, 1211)
-					(1144, 1302))
+					(1145, 1302))
 				    line_style 	0
 				    x_offset   	FALSE)
 				(object TransView "" @2111
@@ -42488,7 +42624,7 @@
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(2737, 237)
+			location   	(2583, 241)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -42500,7 +42636,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@2137
-			    location   	(2737, 393)
+			    location   	(2583, 397)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	516
@@ -42513,7 +42649,7 @@
 			quidu      	"6425B0680084"
 			compartment 	(object Compartment
 			    Parent_View 	@2137
-			    location   	(2491, 434)
+			    location   	(2349, 438)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
