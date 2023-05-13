@@ -51,8 +51,23 @@ if (isset($_POST['add_product'])) {
   }else{
     $error['product_price']='';
   }
+  if (isset($_FILES['product_images'])) {
+    $files = $_FILES['product_images'];
+    $image_urls = $files['name'];
+    // echo '<pre/>';
+    // print_r($files['type'][1]);
+    foreach ($image_urls as $key => $value) {
+      if ($files['type'][$key] == 'image/jpeg' || $files['type'][$key] == 'image/jpg' || $files['type'][$key] == 'image/png'){
+        
+      }
+      else{
+        $error['product_images'] = 'Ảnh sai định dạng';
+        break;
+      }
+    }
+  }
   //thêm sản phẩm
-  if (empty($error['product_image'])&& empty($error['product_quantity']) && empty($error['product_price'])) {
+  if (empty($error['product_images']) && empty($error['product_image']) && empty($error['product_quantity']) && empty($error['product_price'])) {
     $sqlInsert = "INSERT INTO product (product_name, product_price, product_description, product_quantity, product_size, product_image, material_id, category_id, created_at, updated_at) 
         VALUES ('$product_name', '$product_price', '$product_description', '$product_quantity','$product_size','$product_image', '$material_id', '$category_id', '$created_at', '$updated_at')";
     $query = mysqli_query($connect, $sqlInsert);
@@ -60,17 +75,13 @@ if (isset($_POST['add_product'])) {
     if (isset($_FILES['product_images'])) {
       $files = $_FILES['product_images'];
       $image_urls = $files['name'];
-  
+      // echo '<pre/>';
+      // print_r($files['type'][1]);
       foreach ($image_urls as $key => $value) {
-        if ($file['type'][$key] != 'image/jpeg' || $file['type'][$key] != 'image/jpg' || $file['type'][$key] != 'image/png'){
-          $error['product_images'] = 'Ảnh sai định dạng';
-          break;
-        } else {
           move_uploaded_file($files['tmp_name'][$key], '../../../img/imgProduct/' . $value);
           mysqli_query($connect, "INSERT INTO product_image_desc(image_url,product_id,created_at) VALUES ('$value','$id_product_after_insert','$created_at')");
           $error['product_images']='';
           header('location:CreateReadDeleteProduct.php');
-        }
       }
     }
   }

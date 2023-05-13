@@ -161,7 +161,7 @@ if (isset($_POST['edit_product'])) {
       <?php echo isset($error['product_image']) ? $error['product_image'] : ''; ?>
     </div>
     <label for="product_images" class="form-label">Ảnh mô tả sản phẩm</label>
-    <inputtype="file" name="product_images[]" id="product_images" class="form-control" multiple="mutiple"
+    <input type="file" name="product_images[]" id="product_images" class="form-control" multiple="mutiple"
       placeholder="Nhập...">
       <div class="text-danger">
         <?php echo isset($error['product_images']) ? $error['product_images'] : ''; ?>
